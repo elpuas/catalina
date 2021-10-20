@@ -1,0 +1,3 @@
+h1.heading {
+    @apply font-interBlack text-heroMobile leading-normal lg:text-hero lg:leading-relaxed tracking-tight;
+}

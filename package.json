@@ -14,9 +14,10 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "format": "npx prettier  '**/*.{js,jsx,ts,tsx,md,html,css,scss,json,yml}' --write || true",
-    "tailwind-config-viewer": "tailwind-config-viewer -o"
+    "viewer": "tailwind-config-viewer -o"
   },
   "dependencies": {
+    "classnames": "^2.3.1",
     "gatsby": "^3.14.3",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-manifest": "^3.14.0",
