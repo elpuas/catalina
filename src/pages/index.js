@@ -167,7 +167,7 @@ const IndexPage = () => (
                 NEW!
               </span>
             )}
-            <p style={descriptionStyle}>{link.description}</p>
+            <p className="text-purple-600" style={descriptionStyle}>{link.description}</p>
           </span>
         </li>
       ))}
