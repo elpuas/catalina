@@ -1,13 +1,26 @@
+/* eslint-disable no-unused-vars */
+const path = require("path");
+// eslint-disable-next-line import/no-extraneous-dependencies
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://elpuas.com",
     title: "Catalina",
+    description:
+      "Personal Blog, Made with GatsbyJS, DatoCMS, CSS Modules and Tailwind",
+    author: "Alfredo Navas",
+    keywords: "",
+    twitter: "@3LPU4S",
+    linkedIn: "elpuasdev",
   },
   plugins: [
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "457dc921fb0ce527699f837caae648",
+        apiToken: process.env.GATSBY_DATO_API_TOKEN,
       },
     },
     "gatsby-plugin-postcss",
