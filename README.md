@@ -1,30 +1,23 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Catalina - A Gatsby Blog with DatoCMS
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Clone the Repo.**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+    Use the terminal to clone the repo.
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    # clone the repo
+    https://github.com/elpuas/catalina.git
     ```
 
 2.  **Start developing.**
 
-    Navigate into your new site’s directory and start it up.
+    Navigate into your new site’s directory install packages and start it up.
 
     ```shell
-    cd my-gatsby-site/
-    npm run develop
+    cd catalina
+    npm install && gatsby develop
     ```
 
 3.  **Open the code and start customizing!**
@@ -33,7 +26,77 @@
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Learn more**
+4.  **Theme Structure**
+
+```shell
+├── src
+    ├── components
+      ├── bricks
+      ├── blocks
+      ├── templates
+      └── structures
+    ├── fonts
+    ├── functions
+    ├── hooks
+    ├── images
+    ├── pages
+    └── styles
+```
+
+5.  **DatoCMS**
+To Connect your dato API, is very simple, just create a env file `.env.example`
+
+```shell
+DATO_API_TOKEN=YOUR_API_KEY
+```
+
+6.  **Create Pages**
+To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
+
+```js
+const path = require('path');
+
+exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions
+
+    // eslint-disable-next-line
+    const createBlogsPosts = new Promise((resolve, reject) => {
+        try {
+            graphql(`
+            {
+                allDatoCmsArticle {
+                    edges {
+                        node {
+                        slug
+                        }
+                    }
+                }
+            }
+            `).then( res => {
+                const posts = res.data.allDatoCmsArticle.edges;
+                posts.map( ( { node: post } ) => {
+                    const { slug } = post;
+
+                    createPage({
+                        path: `/blog/${slug}`,
+                        component: path.resolve('./src/components/templates/article.js'),
+                        context: {
+                            slug,
+                        },
+                    });
+                });
+                resolve();
+            });
+        } catch (error) {
+            reject(error);
+        }
+    });
+```
+Here we are creating pages based on the model `Article`, the GraphQL endpoint will be `allDatoCmsArticle`.
+
+This theme uses `gatsby-source-datocms` [visit the documentation](https://www.gatsbyjs.com/plugins/gatsby-source-datocms/) for all the options.
+
+7.  **Gatsby Documentation**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
@@ -47,8 +110,9 @@
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-## 🚀 Quick start (Gatsby Cloud)
+9.  **DatoCMS Documentation**
+    - [Documentation](https://www.datocms.com/docs)
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+    - [Content Modeling](https://www.datocms.com/docs/content-modelling)
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+# Do you have a website project? Let's talk.

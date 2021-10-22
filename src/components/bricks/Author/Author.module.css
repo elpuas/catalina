@@ -1,0 +1,11 @@
+.author {
+    @apply flex items-center;
+}
+
+.author svg {
+    @apply w-6 h-6;
+}
+
+.author p {
+    @apply ml-3;
+}

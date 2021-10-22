@@ -1,0 +1,25 @@
+.button {
+    @apply uppercase font-interBold;
+}
+
+.primary a {
+  @apply text-tertiary hover:text-primary rounded-full px-10 py-6 bg-primary hover:bg-secondary transition-colors inline-block;
+}
+
+.secondary {
+  @apply text-base inline-flex items-center;
+}
+
+.secondary svg {
+  @apply w-4 h-4 ml-3 transition-all;
+  fill: #5E6F00;
+}
+
+.secondary a {
+  @apply text-primary hover:text-secondary;
+}
+
+.secondary a:hover + svg {
+  @apply ml-4;
+  fill: #B6D600;
+}

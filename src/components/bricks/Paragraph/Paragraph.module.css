@@ -1,0 +1,3 @@
+.paragraph {
+    @apply text-base leading-9;
+}

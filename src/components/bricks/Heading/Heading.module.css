@@ -1,3 +1,15 @@
+.heading {
+    @apply font-interBlack lg:leading-relaxed tracking-tight;
+}
+
 h1.heading {
-    @apply font-interBlack text-heroMobile leading-normal lg:text-hero lg:leading-relaxed tracking-tight;
+    @apply text-heroMobile leading-normal lg:text-hero;
+}
+
+h2.heading {
+    @apply text-sectionHeaderMobile lg:text-sectionHeader;
+}
+
+h3.heading {
+    @apply text-sectionContent font-interBold;
 }
