@@ -30,7 +30,7 @@
 
 ```shell
 ├── src
-    ├── components
+    └── components
       ├── bricks
       ├── blocks
       ├── templates

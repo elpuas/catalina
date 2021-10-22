@@ -1,0 +1,21 @@
+.navigation .menu {
+  @apply absolute top-0 left-0 w-full h-full flex justify-center items-center bg-primary;
+}
+
+.navigation > div[role='button'] {
+  @apply block;
+}
+
+.isDesktop .menu {
+  @apply relative;
+}
+
+.isDesktop > div[role='button'] {
+  @apply hidden;
+}
+
+.menuDesktop{
+  @apply inline-flex;
+}
+
+.menuMobile {}
