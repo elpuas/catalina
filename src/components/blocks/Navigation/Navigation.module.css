@@ -1,21 +1,38 @@
-.navigation .menu {
-  @apply absolute top-0 left-0 w-full h-full flex justify-center items-center bg-primary;
+.navigation {
+  @apply z-50;
 }
 
 .navigation > div[role='button'] {
-  @apply block;
-}
-
-.isDesktop .menu {
-  @apply relative;
+  @apply block z-50;
 }
 
 .isDesktop > div[role='button'] {
   @apply hidden;
 }
 
-.menuDesktop{
+.desktop .list {
   @apply inline-flex;
 }
 
-.menuMobile {}
+.desktop .list .link {
+  @apply ml-7;
+}
+
+.mobile {
+  @apply bg-primary fixed top-0 w-full h-full z-30 -left-full transition-transform;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+}
+
+.mobile .list {
+  @apply flex justify-center items-center;
+}
+
+.displayNav {
+  @apply transform-none left-0 transition-transform;
+}
+
+.link {
+  @apply text-base font-interBold lowercase;
+}

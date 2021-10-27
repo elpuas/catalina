@@ -20,11 +20,16 @@ export default function Navigation({ menu }) {
   return (
     <nav className={cx(styles.navigation, isDesktop && styles.isDesktop)}>
       <Hamburger toggled={isOpen} toggle={setOpen} rounded />
-      <div className={cx(styles.menu)}>
-        <ul className={isDesktop ? styles.menuDesktop : styles.menuMobile}>
+      <div className={cx(
+        styles.menu,
+        isDesktop ? styles.desktop : styles.mobile,
+        isOpen && styles.displayNav,
+      )}
+      >
+        <ul className={styles.list}>
           { menu.map((link, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <li key={index} className={styles.link}><Link to={link.slug}>{link.name}</Link></li>
+            <li key={index} className={styles.link}><Link to={link.slug}>{`${link.name}.`}</Link></li>
           ))}
         </ul>
       </div>
