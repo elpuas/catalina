@@ -30,7 +30,9 @@
 }
 
 .displayNav {
-  @apply transform-none left-0 transition-transform;
+  @apply left-0 transition-transform;
+
+  transform: translate(0, 0);
 }
 
 .link {
