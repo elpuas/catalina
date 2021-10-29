@@ -4,7 +4,14 @@ import { graphql } from 'gatsby';
 import Layout from '../../bricks/Layout/Layout';
 import SEO from '../../bricks/Seo/Seo';
 import Header from '../../structures/Header/Header';
-
+/**
+ * The Article component.
+ *
+ * @author Alfredo Navas <elpuas@gmail.com>
+ * @param {object} props - Component props
+ * @param {object} props.data - Component data
+ * @return {Element} - React component
+ */
 export default function Article({ data }) {
   const {
     title,
@@ -32,58 +39,59 @@ export default function Article({ data }) {
   );
 }
 
+/** The Article Query */
 export const articleQuery = graphql`
-query ArticleQuery($slug: String!) {
-  datoCmsArticle( slug: { eq: $slug } ) {
-    title
-    slug
-    meta {
-      publishedAt(fromNow: false)
-    }
-    description {
+  query ArticleQuery($slug: String!) {
+    datoCmsArticle( slug: { eq: $slug } ) {
       title
-      description
-      twitterCard
-      image {
-        url
+      slug
+      meta {
+        publishedAt(fromNow: false)
       }
-    }
-    seoMetaTags {
-      tags
-    }
-    content {
-      ... on DatoCmsBlockParagraph {
-        model {
-          apiKey
-        }
-        content {
-          value
+      description {
+        title
+        description
+        twitterCard
+        image {
+          url
         }
       }
-      ... on DatoCmsBlockImage {
-        model {
-          apiKey
-        }
+      seoMetaTags {
+        tags
       }
-      ... on DatoCmsBlockSelectedArticlesHero {
-        model {
-          apiKey
+      content {
+        ... on DatoCmsBlockParagraph {
+          model {
+            apiKey
+          }
+          content {
+            value
+          }
         }
-      }
-      ... on DatoCmsBlockContentWithImage {
-        model {
-          apiKey
+        ... on DatoCmsBlockImage {
+          model {
+            apiKey
+          }
         }
-      }
-      ... on DatoCmsBlockCode {
-        model {
-          apiKey
+        ... on DatoCmsBlockSelectedArticlesHero {
+          model {
+            apiKey
+          }
         }
-        code {
-          value
+        ... on DatoCmsBlockContentWithImage {
+          model {
+            apiKey
+          }
+        }
+        ... on DatoCmsBlockCode {
+          model {
+            apiKey
+          }
+          code {
+            value
+          }
         }
       }
     }
   }
-}
 `;
