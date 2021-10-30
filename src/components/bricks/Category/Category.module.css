@@ -3,7 +3,7 @@
 }
 
 .categories li {
-  @apply rounded-tr-lg rounded-bl-lg px-2;
+  @apply rounded-tr-lg rounded-bl-lg px-2 mr-2;
   background-color: rgba(0, 0, 0, .5);
 }
 

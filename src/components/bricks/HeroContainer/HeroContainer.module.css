@@ -1,0 +1,8 @@
+.heroContainer {
+    @apply relative flex items-center flex-col justify-center;
+    height: 662px;
+}
+
+.heroContainer > div:first-of-type {
+    @apply absolute inset-0 z-0;
+}

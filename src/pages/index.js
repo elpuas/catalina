@@ -1,16 +1,16 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import * as React from 'react';
 import { graphql } from 'gatsby';
-import Heading from '../components/bricks/Heading/Heading';
-import SEO from '../components/bricks/Seo/Seo';
-import Layout from '../components/bricks/Layout/Layout';
-import Header from '../components/structures/Header/Header';
+import * as React from 'react';
 import Author from '../components/bricks/Author/Author';
-import Category from '../components/bricks/Category/Category';
-import Date from '../components/bricks/Date/Date';
-import Button from '../components/bricks/Button/Button';
-import BlockContent from '../components/blocks/BlockContent/BlockContent';
 import BlockCode from '../components/blocks/BlockCode/BlockCode';
+import BlockContent from '../components/blocks/BlockContent/BlockContent';
+import Button from '../components/bricks/Button/Button';
+import Category from '../components/bricks/Category/Category';
+import DateMeta from '../components/bricks/DateMeta/DateMeta';
+import Header from '../components/structures/Header/Header';
+import Heading from '../components/bricks/Heading/Heading';
+import Layout from '../components/bricks/Layout/Layout';
+import SEO from '../components/bricks/Seo/Seo';
 
 export default function IndexPage({ data }) {
   const seo = data.datoCmsFrontPage;
@@ -24,7 +24,7 @@ export default function IndexPage({ data }) {
         </Heading>
         <Author />
         <Category />
-        <Date />
+        <DateMeta />
         <Button />
         <Button mode="secondary" />
         <BlockContent />

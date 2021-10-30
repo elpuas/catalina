@@ -3,7 +3,7 @@
 }
 
 h1.heading {
-    @apply text-heroMobile leading-normal lg:text-hero;
+    @apply text-heroMobile lg:text-hero;
 }
 
 h2.heading {

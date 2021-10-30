@@ -1,8 +1,9 @@
+/* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
 import * as React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import * as styles from './Category.module.css'
+import * as styles from './Category.module.css';
 
 /**
  * The category component
@@ -15,7 +16,9 @@ import * as styles from './Category.module.css'
 export default function Category({ categories }) {
   return (
     <ul className={styles.categories}>
-      { categories.map((cat, index) => <li key={index}><Link to={cat.slug}>{cat.name}</Link></li>) }
+      { categories.map((cat, index) => (
+        <li key={index}><Link to={`/category/${cat.slug}`}>{cat.title}</Link></li>
+      )) }
     </ul>
   );
 }
@@ -25,5 +28,5 @@ Category.propTypes = {
 };
 
 Category.defaultProps = {
-  categories: [{ slug: '/', name: 'code' }],
+  categories: [{ slug: '/', title: 'code' }],
 };

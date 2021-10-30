@@ -1,9 +1,20 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import * as React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { graphql } from 'gatsby';
+import * as React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import * as styles from './Article.module.css';
+import Author from '../../bricks/Author/Author';
+import Blocks from '../../blocks/Blocks/Blocks';
+import Category from '../../bricks/Category/Category';
+import DateMeta from '../../bricks/DateMeta/DateMeta';
+import Header from '../../structures/Header/Header';
+import Heading from '../../bricks/Heading/Heading';
+import HeroContainer from '../../bricks/HeroContainer/HeroContainer';
 import Layout from '../../bricks/Layout/Layout';
 import SEO from '../../bricks/Seo/Seo';
-import Header from '../../structures/Header/Header';
+
 /**
  * The Article component.
  *
@@ -14,13 +25,14 @@ import Header from '../../structures/Header/Header';
  */
 export default function Article({ data }) {
   const {
-    title,
-    content,
     categories,
-    seoMetaTags,
-    featuredImage,
+    content,
     description,
+    featuredImage,
     meta,
+    seoMetaTags,
+    slug,
+    title,
   } = data.datoCmsArticle;
 
   const seo = {
@@ -28,16 +40,43 @@ export default function Article({ data }) {
     description,
   };
 
+  const date = new Date(meta.publishedAt);
+  const createdOn = date.toLocaleDateString('en-US');
+
   return (
-    <Layout>
-      <SEO {...seo} />
-      <Header />
-      <div className="article">
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      </div>
-    </Layout>
+    <>
+      <Layout>
+        <SEO {...seo} />
+        <Header />
+        <HeroContainer>
+          <GatsbyImage image={featuredImage?.gatsbyImageData} alt={featuredImage?.alt} />
+          <div className={styles.heroInner}>
+            <Category categories={categories} />
+            <Heading level="1">{title}</Heading>
+            <div className={styles.meta}>
+              <ul>
+                <li><Author /></li>
+                <li><DateMeta date={createdOn} /></li>
+              </ul>
+            </div>
+          </div>
+        </HeroContainer>
+        <main className={cx(styles.article, `article-${slug}`)}>
+          <Blocks blocks={content} />
+        </main>
+      </Layout>
+    </>
   );
 }
+
+Article.defaultProps = {
+  data: null,
+};
+
+Article.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.any,
+};
 
 /** The Article Query */
 export const articleQuery = graphql`
@@ -45,8 +84,16 @@ export const articleQuery = graphql`
     datoCmsArticle( slug: { eq: $slug } ) {
       title
       slug
+      categories {
+        title
+        slug
+      }
       meta {
         publishedAt(fromNow: false)
+      }
+      featuredImage {
+        gatsbyImageData
+        alt
       }
       description {
         title

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { ClockICO } from '../Icons/Icons';
-import * as styles from './Date.module.css';
+import * as styles from './DateMeta.module.css';
 /**
  * The date component.
  *
@@ -9,7 +9,7 @@ import * as styles from './Date.module.css';
  * @param {string} props.date The date string.
  * @return {Element} Renders the date component.
  */
-export default function Date({ date }) {
+export default function DateMeta({ date }) {
   return (
     <div className={styles.date}>
       <ClockICO />
@@ -18,10 +18,10 @@ export default function Date({ date }) {
   );
 }
 
-Date.propTypes = {
+DateMeta.propTypes = {
   date: PropTypes.string,
 };
 
-Date.defaultProps = {
+DateMeta.defaultProps = {
   date: '10/24/2021',
 };
