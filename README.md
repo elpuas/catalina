@@ -20,6 +20,16 @@
     npm install && gatsby develop
     ```
 
+    ## Commands
+    ```shell
+    gatsby develop // Once you’ve installed a Gatsby site, go to the root directory of your project and start the development server.
+    gatsby build // At the root of a Gatsby site, compile your application and make it ready for deployment.
+    gatsby serve // At the root of a Gatsby site, serve the production build of your site for testing.
+    gatsby clean // At the root of a Gatsby site, wipe out the cache (.cache folder) and public directories
+    npm run format // Run Prettier and format your code.
+    npm run viewer // View your Tailwind config file.
+    ```
+
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
