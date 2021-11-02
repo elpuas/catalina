@@ -15,7 +15,7 @@
 }
 
 .desktop .list .link {
-  @apply ml-7;
+  @apply ml-7 text-primary transition hover:text-secondary;
 }
 
 .mobile {
@@ -41,4 +41,12 @@
 
 .mobile .link {
   @apply text-sectionContent text-tertiary transition duration-500 ease-in-out hover:text-secondary;
+}
+
+.navigation > [role="button"] > div > div {
+  background: #5E6F00 !important;
+}
+
+.navigation.isOpen > [role="button"] > div > div {
+  background: #D8FF00 !important;
 }

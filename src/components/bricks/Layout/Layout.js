@@ -10,7 +10,6 @@ export default function Layout({ children }) {
     <div className={styles.container}>
       <Header isMenuOpen={isMenuOpen} />
       {children}
-      {/* Footer */}
     </div>
   );
 }

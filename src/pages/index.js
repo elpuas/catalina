@@ -7,7 +7,6 @@ import BlockContent from '../components/blocks/BlockContent/BlockContent';
 import Button from '../components/bricks/Button/Button';
 import Category from '../components/bricks/Category/Category';
 import DateMeta from '../components/bricks/DateMeta/DateMeta';
-import Header from '../components/structures/Header/Header';
 import Heading from '../components/bricks/Heading/Heading';
 import Layout from '../components/bricks/Layout/Layout';
 import SEO from '../components/bricks/Seo/Seo';
@@ -16,7 +15,6 @@ export default function IndexPage({ data }) {
   const seo = data.datoCmsFrontPage;
   return (
     <Layout>
-      <Header />
       <main>
         <SEO {...seo} />
         <Heading level="1">

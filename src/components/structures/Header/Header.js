@@ -8,7 +8,6 @@ export default function Header({ isMenuOpen }) {
   return (
     <header className={cx(styles.header, isMenuOpen && styles.isOpen)}>
       <Logo />
-      {console.log(isMenuOpen)}
       <Navigation />
     </header>
   );

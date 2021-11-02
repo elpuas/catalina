@@ -1,11 +1,13 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import * as React from 'react';
 import cx from 'classnames';
 import { Squash as Hamburger } from 'hamburger-react';
 // import PropTypes from 'prop-types';
 import * as styles from './Navigation.module.css';
 import useMediaQuery from '../../../hooks/useMediaQuery';
+import { useAppContext } from '../../context/AppContext';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 /**
  * The Navigation Component
  *
@@ -46,9 +48,14 @@ export default function Navigation() {
   const { menu } = data.allDatoCmsNavigation.nodes[0];
   const isDesktop = useMediaQuery('(min-width: 1024px)');
   const [isOpen, setOpen] = useState(false);
+  const { handleSetIsMenuOpen } = useAppContext();
+
+  useEffect(() => {
+    handleSetIsMenuOpen(isOpen);
+  }, [isOpen]);
 
   return (
-    <nav className={cx(styles.navigation, isDesktop && styles.isDesktop)}>
+    <nav className={cx(styles.navigation, isDesktop && styles.isDesktop, isOpen && styles.isOpen)}>
       <Hamburger toggled={isOpen} toggle={setOpen} rounded />
       <div className={cx(
         styles.menu,

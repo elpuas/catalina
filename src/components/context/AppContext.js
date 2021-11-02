@@ -1,9 +1,10 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
 import * as React from 'react';
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
-// Initialize Menu context object.
+// Initialize context object.
 export const AppContext = createContext();
 
 /**
@@ -28,7 +29,7 @@ export default function AppContextProvider(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /**
-   * Toggles The Dark Mode State
+   * Toggles The Menu State
    *
    * @author Alfredo Navas <elpuas@gmail.com>
    * @param {boolean} isMenuOpen The Mode Value.
@@ -44,7 +45,7 @@ export default function AppContextProvider(props) {
   };
 
   return (
-    <AppContextProvider.Provider value={appContextProps}>{children}</AppContextProvider.Provider>
+    <AppContext.Provider value={appContextProps}>{children}</AppContext.Provider>
   );
 }
 
