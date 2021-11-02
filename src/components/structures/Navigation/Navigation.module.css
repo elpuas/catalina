@@ -26,7 +26,7 @@
 }
 
 .mobile .list {
-  @apply flex justify-center items-center;
+  @apply flex justify-center items-center flex-col h-full;
 }
 
 .displayNav {
@@ -37,4 +37,8 @@
 
 .link {
   @apply text-base font-interBold lowercase;
+}
+
+.mobile .link {
+  @apply text-sectionContent text-tertiary transition duration-500 ease-in-out hover:text-secondary;
 }

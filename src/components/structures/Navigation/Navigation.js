@@ -25,11 +25,17 @@ export default function Navigation() {
               id
               slug
               title
+              model {
+                apiKey
+              }
             }
             ... on DatoCmsPage {
               id
               slug
               title
+              model {
+                apiKey
+              }
             }
           }
         }
@@ -52,8 +58,8 @@ export default function Navigation() {
       >
         <ul className={styles.list}>
           { menu.map((link) => (
-            <li key={link.id} className={styles.link}>
-              <Link to={link.slug}>{`${link.title}.`}</Link>
+            <li key={link?.id} className={styles.link}>
+              <Link to={link.model.apiKey === 'front_page' ? '/' : link.slug}>{`${link.title}.`}</Link>
             </li>
           ))}
         </ul>
