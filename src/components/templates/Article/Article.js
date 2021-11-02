@@ -9,7 +9,6 @@ import Author from '../../bricks/Author/Author';
 import Blocks from '../../blocks/Blocks/Blocks';
 import Category from '../../bricks/Category/Category';
 import DateMeta from '../../bricks/DateMeta/DateMeta';
-import Header from '../../structures/Header/Header';
 import Heading from '../../bricks/Heading/Heading';
 import HeroContainer from '../../bricks/HeroContainer/HeroContainer';
 import Layout from '../../bricks/Layout/Layout';
@@ -47,7 +46,6 @@ export default function Article({ data }) {
     <>
       <Layout>
         <SEO {...seo} />
-        <Header />
         <HeroContainer>
           <GatsbyImage image={featuredImage?.gatsbyImageData} alt={featuredImage?.alt} />
           <div className={styles.heroInner}>
