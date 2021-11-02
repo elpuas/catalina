@@ -1,13 +1,13 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Squash as Hamburger } from 'hamburger-react';
 import { useState, useEffect } from 'react';
 import * as React from 'react';
 import cx from 'classnames';
-import { Squash as Hamburger } from 'hamburger-react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import * as styles from './Navigation.module.css';
-import useMediaQuery from '../../../hooks/useMediaQuery';
 import { useAppContext } from '../../context/AppContext';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
+import useMediaQuery from '../../../hooks/useMediaQuery';
+
 /**
  * The Navigation Component
  *
@@ -75,13 +75,14 @@ export default function Navigation() {
   );
 }
 
-// Navigation.propTypes = {
-//   menu: PropTypes.arrayOf(PropTypes.object),
-// };
+Navigation.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
+  menu: PropTypes.arrayOf(PropTypes.object),
+};
 
-// Navigation.defaultProps = {
-//   menu: [
-//     { slug: '/', name: 'Home' },
-//     { slug: '/', name: 'About' },
-//   ],
-// };
+Navigation.defaultProps = {
+  menu: [
+    { slug: '/', name: 'Home' },
+    { slug: '/', name: 'About' },
+  ],
+};
