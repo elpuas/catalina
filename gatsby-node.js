@@ -25,8 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
       `).then((res) => {
         const articles = res.data.allDatoCmsArticle.edges;
-        // eslint-disable-next-line array-callback-return
-        articles.map(({ node: post }) => {
+        articles.forEach(({ node: post }) => {
           const { slug } = post;
           /**
            * Create article page.
@@ -51,5 +50,44 @@ exports.createPages = ({ graphql, actions }) => {
     }
   });
 
-  return Promise.all([createArticle]);
+  const createPages = new Promise((resolve, reject) => {
+    try {
+      graphql(`
+      {
+        allDatoCmsPage {
+          edges {
+            node {
+              slug
+              id
+            }
+          }
+        }
+      }`).then((res) => {
+        const pages = res.data.allDatoCmsPage.edges;
+
+        pages.forEach(({ node: page }) => {
+          const { slug } = page;
+          /**
+           * Create page for each page.
+           * Create slug for template.
+           * Pass page data to template.
+           * @param {string} slug - Page slug.
+           * @returns {void}
+          */
+          createPage({
+            path: `/${slug}`,
+            component: path.resolve('./src/components/templates/Page/Page.js'),
+            context: {
+              slug,
+            },
+          });
+        });
+        resolve();
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });
+
+  return Promise.all([createArticle, createPages]);
 };

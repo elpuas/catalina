@@ -18,9 +18,9 @@ import SEO from '../../bricks/Seo/Seo';
  * The Article component.
  *
  * @author Alfredo Navas <elpuas@gmail.com>
- * @param {object} props - Component props
- * @param {object} props.data - Component data
- * @return {Element} - React component
+ * @param {object} props - The component props
+ * @param {object} props.data - The component data
+ * @return {Element} - The React component
  */
 export default function Article({ data }) {
   const {

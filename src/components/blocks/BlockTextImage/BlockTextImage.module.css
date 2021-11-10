@@ -1,0 +1,16 @@
+.blockTextImage {
+    @apply grid w-full md:grid-cols-12 gap-5 mb-20;
+}
+
+.blockTextImage > * {
+  @apply md:col-span-6;
+}
+
+.blockTextImage h2 {
+  @apply text-sectionHeader font-interBold tracking-tight text-primary;
+}
+
+.blockTextImage h2 strong {
+  @apply text-secondary;
+}
+
