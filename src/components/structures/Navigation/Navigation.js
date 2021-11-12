@@ -66,7 +66,7 @@ export default function Navigation() {
         <ul className={styles.list}>
           { menu.map((link) => (
             <li key={link?.id} className={styles.link}>
-              <Link to={link.model.apiKey === 'front_page' ? '/' : link.slug}>{`${link.title}.`}</Link>
+              <Link to={link.model.apiKey === 'front_page' ? '/' : `/${link.slug}`}>{`${link.title}.`}</Link>
             </li>
           ))}
         </ul>

@@ -10,6 +10,7 @@ import DateMeta from '../components/bricks/DateMeta/DateMeta';
 import Heading from '../components/bricks/Heading/Heading';
 import Layout from '../components/bricks/Layout/Layout';
 import SEO from '../components/bricks/Seo/Seo';
+import Observables from '../components/bricks/Observables/Observables';
 
 export default function IndexPage({ data }) {
   const seo = data.datoCmsFrontPage;
@@ -27,6 +28,9 @@ export default function IndexPage({ data }) {
         <Button mode="secondary" />
         <BlockContent />
         <BlockCode />
+        <Observables isVisibleClass="isVisible" customClass="observable-index" threshold={0.75}>
+          <BlockContent />
+        </Observables>
       </main>
     </Layout>
   );
