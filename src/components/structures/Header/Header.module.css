@@ -2,8 +2,12 @@
     @apply flex items-center justify-between;
 }
 
+.header svg {
+    fill: #5E6F00;
+}
+
 .isOpen svg {
     @apply relative fill-current;
-    fill: #D8FF00;
+    fill: #B6D600;
     z-index: 100;
 }

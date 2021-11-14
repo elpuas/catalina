@@ -3,6 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--color-primary: '#5E6F00';
+	--color-secondary: '#B6D600';
+	--color-tertiary: '#D8FF00';
+}
+
 body {
     @apply bg-tertiary;
 }
