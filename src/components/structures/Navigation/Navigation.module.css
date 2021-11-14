@@ -19,10 +19,7 @@
 }
 
 .mobile {
-  @apply bg-primary fixed top-0 w-full h-full z-30 -left-full transition-transform;
-
-  transform-origin: 0% 0%;
-  transform: translate(-100%, 0);
+  @apply bg-primary fixed top-0 w-full h-full z-30 -left-full transform -translate-x-full transition-transform ease-out duration-500;
 }
 
 .mobile .list {
@@ -30,9 +27,7 @@
 }
 
 .displayNav {
-  @apply left-0 transition-transform;
-
-  transform: translate(0, 0);
+  @apply left-0 transition-transform transform translate-x-0 ease-out duration-500;
 }
 
 .link {

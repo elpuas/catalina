@@ -3,11 +3,10 @@
 }
 
 .header svg {
-    fill: #5E6F00;
+    @apply text-primary fill-current;
 }
 
 .isOpen svg {
-    @apply relative fill-current;
-    fill: #B6D600;
+    @apply relative text-tertiary fill-current;
     z-index: 100;
 }
