@@ -64,6 +64,36 @@ export const pageQuery = graphql`
           value
         }
       }
+      ... on DatoCmsBlockVideoHero {
+        model {
+          apiKey
+        }
+        callout {
+          content {
+            value
+          }
+          heading {
+            value
+          }
+          link {
+            ... on DatoCmsArticle {
+              slug
+              title
+            }
+            ... on DatoCmsPage {
+              slug
+              title
+            }
+          }
+        }
+        videoUrl {
+          url
+        }
+        thumbnail {
+          gatsbyImageData
+          url
+        }
+      }
     }
   }
 }
