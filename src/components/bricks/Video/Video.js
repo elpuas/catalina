@@ -11,7 +11,12 @@ import * as styles from './Video.module.css';
  * @param {string} props.children - A image to display before the video.
  * @return {Element} - The video block component.
  */
-export default function Video({ videoSrcURL, videoTitle, children }) {
+export default function Video(props) {
+  const {
+    videoUrl: url,
+    videoTitle,
+    children,
+  } = props;
   const [hideThumbnail, setHideThumbnail] = useState(false);
 
   const onClick = (e) => {
@@ -30,7 +35,7 @@ export default function Video({ videoSrcURL, videoTitle, children }) {
         {children}
       </button>
       <iframe
-        src={hideThumbnail ? `${videoSrcURL}?autoplay=1` : undefined}
+        src={hideThumbnail ? `${url}?autoplay=1` : undefined}
         title={videoTitle}
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         frameBorder="0"
@@ -44,14 +49,18 @@ export default function Video({ videoSrcURL, videoTitle, children }) {
 }
 
 Video.propTypes = {
-  videoSrcURL: PropTypes.string,
+  videoUrl: PropTypes.shape({
+    url: PropTypes.string,
+  }),
   videoTitle: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   children: PropTypes.object,
 };
 
 Video.defaultProps = {
-  videoSrcURL: 'https://www.youtube.com/embed/Unqsu8aGy8Y',
+  videoUrl: {
+    url: 'https://www.youtube.com/embed/Unqsu8aGy8Y',
+  },
   videoTitle: '30 Seconds with Reemo at The Berrics Plaza',
   children: React.createElement('img', { src: 'https://placekitten.com/800/600', alt: 'placeholder' }),
 };
