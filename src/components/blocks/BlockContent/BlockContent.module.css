@@ -1,3 +1,7 @@
 .blockContent {
-    @apply relative;
+  @apply relative;
+}
+
+.blockContent p {
+  @apply mb-8;
 }

@@ -1,8 +1,8 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
-import * as React from 'react';
-import { createContext, useContext, useState } from 'react';
-import PropTypes from 'prop-types';
+import * as React from "react";
+import { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 // Initialize context object.
 export const AppContext = createContext();
@@ -45,7 +45,9 @@ export default function AppContextProvider(props) {
   };
 
   return (
-    <AppContext.Provider value={appContextProps}>{children}</AppContext.Provider>
+    <AppContext.Provider value={appContextProps}>
+      {children}
+    </AppContext.Provider>
   );
 }
 

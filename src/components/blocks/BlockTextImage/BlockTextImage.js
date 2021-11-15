@@ -1,9 +1,9 @@
 /* eslint-disable react/forbid-prop-types */
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { StructuredText } from 'react-datocms';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import * as styles from './BlockTextImage.module.css';
+import * as React from "react";
+import PropTypes from "prop-types";
+import { StructuredText } from "react-datocms";
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as styles from "./BlockTextImage.module.css";
 
 /**
  * The BlockTextImage component.
@@ -15,10 +15,7 @@ import * as styles from './BlockTextImage.module.css';
  * @return {Element} - The React element.
  */
 export default function BlockTextImage(props) {
-  const {
-    content,
-    image,
-  } = props;
+  const { content, image } = props;
 
   return (
     <div className={styles.blockTextImage}>

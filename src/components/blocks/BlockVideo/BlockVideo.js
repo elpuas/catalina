@@ -1,11 +1,11 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
-import * as React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import PropTypes from 'prop-types';
-import * as styles from './BlockVideo.module.css';
-import Callout from '../Callout/Callout';
-import Video from '../../bricks/Video/Video';
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as React from "react";
+import PropTypes from "prop-types";
+import * as styles from "./BlockVideo.module.css";
+import Callout from "../Callout/Callout";
+import Video from "../../bricks/Video/Video";
 
 /**
  * The BlockVideo component.
@@ -21,18 +21,15 @@ import Video from '../../bricks/Video/Video';
  * @return {Element} - The BlockVideo component.
  */
 export default function BlockVideo(props) {
-  const {
-    callout: {
-      heading,
-      content,
-      link,
-    },
-    thumbnail,
-    videoUrl,
-  } = props;
+  const { callout, thumbnail, videoUrl } = props;
+
   return (
     <div className={styles.blockVideo}>
-      <Callout heading={heading} content={content} link={link} />
+      <Callout
+        heading={callout[0].heading}
+        content={callout[0].content}
+        link={callout[0].link}
+      />
       <Video videoUrl={videoUrl}>
         <GatsbyImage image={thumbnail.gatsbyImageData} alt="Video" />
       </Video>
@@ -41,13 +38,7 @@ export default function BlockVideo(props) {
 }
 
 BlockVideo.propTypes = {
-  callout: PropTypes.shape({
-    heading: PropTypes.object,
-    content: PropTypes.object,
-    link: PropTypes.shape({
-      url: PropTypes.string,
-    }),
-  }),
+  callout: PropTypes.array,
   thumbnail: PropTypes.shape({
     gatsbyImageData: PropTypes.object,
   }),

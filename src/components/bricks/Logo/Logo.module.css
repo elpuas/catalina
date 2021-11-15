@@ -1,7 +1,7 @@
 .logo {
-    @apply w-10;
+  @apply w-10;
 }
 
 .logo svg {
-    @apply w-10 h-10;
+  @apply w-10 h-10;
 }

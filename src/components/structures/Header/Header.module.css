@@ -1,12 +1,12 @@
 .header {
-    @apply flex items-center justify-between;
+  @apply flex items-center justify-between;
 }
 
 .header svg {
-    @apply text-primary fill-current;
+  @apply text-primary fill-current;
 }
 
 .isOpen svg {
-    @apply relative text-tertiary fill-current;
-    z-index: 100;
+  @apply relative text-tertiary fill-current;
+  z-index: 100;
 }

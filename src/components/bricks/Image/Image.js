@@ -1,7 +1,7 @@
 /* eslint-disable react/require-default-props */
-import React from 'react';
-import PropTypes from 'prop-types';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import React from "react";
+import PropTypes from "prop-types";
+import { GatsbyImage } from "gatsby-plugin-image";
 /**
  * Render the image block component
  *
@@ -11,9 +11,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
  */
 export default function Image(props) {
   const { image } = props;
-  return (
-    <GatsbyImage image={image.gatsbyImageData} alt={image.alt} />
-  );
+  return <GatsbyImage image={image.gatsbyImageData} alt={image.alt} />;
 }
 
 Image.propTypes = {

@@ -1,12 +1,12 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
-import * as React from 'react';
-import { StructuredText } from 'react-datocms';
-import PropTypes from 'prop-types';
-import Heading from '../../bricks/Heading/Heading';
-import BlockContent from '../BlockContent/BlockContent';
-import Button from '../../bricks/Button/Button';
-import * as styles from './Callout.module.css';
+import { StructuredText } from "react-datocms";
+import * as React from "react";
+import PropTypes from "prop-types";
+import * as styles from "./Callout.module.css";
+import BlockContent from "../BlockContent/BlockContent";
+import Button from "../../bricks/Button/Button";
+import Heading from "../../bricks/Heading/Heading";
 
 /**
  * The Callout component is used to display a callout with a heading, text, and a button.
@@ -20,18 +20,14 @@ import * as styles from './Callout.module.css';
  * @return {Element} The rendered component.
  */
 export default function Callout(props) {
-  const {
-    heading,
-    content,
-    link: slug,
-  } = props;
+  const { heading, content, link } = props;
   return (
     <div className={styles.callout}>
       <Heading className={styles.heading} level="2">
         <StructuredText data={heading} />
       </Heading>
       <BlockContent content={content} />
-      <Button slug={slug} name="Learn More" mode="secondary" />
+      <Button slug={`/${link.slug}`} name="Learn More" mode="secondary" />
     </div>
   );
 }

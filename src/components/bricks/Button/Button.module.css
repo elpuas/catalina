@@ -1,5 +1,5 @@
 .button {
-    @apply uppercase font-interBold;
+  @apply uppercase font-interBold;
 }
 
 .primary a {
@@ -12,7 +12,7 @@
 
 .secondary svg {
   @apply w-4 h-4 ml-3 transition-all;
-  fill: #5E6F00;
+  fill: #5e6f00;
 }
 
 .secondary a {
@@ -21,5 +21,5 @@
 
 .secondary a:hover + svg {
   @apply ml-4;
-  fill: #B6D600;
+  fill: #b6d600;
 }

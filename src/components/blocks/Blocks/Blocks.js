@@ -1,6 +1,6 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import displayBlock from '../../../functions/display-block';
+import * as React from "react";
+import PropTypes from "prop-types";
+import displayBlock from "../../../functions/display-block";
 /**
  * Render the Blocks component.
  *
@@ -11,10 +11,8 @@ import displayBlock from '../../../functions/display-block';
 export default function Blocks({ blocks }) {
   return (
     <>
-      {
-            !!blocks?.length
-            && blocks.map((block, index) => displayBlock(block, index))
-        }
+      {!!blocks?.length &&
+        blocks.map((block, index) => displayBlock(block, index))}
     </>
   );
 }

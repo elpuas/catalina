@@ -1,14 +1,13 @@
 .categories {
-    @apply inline-flex;
+  @apply inline-flex;
 }
 
 .categories li {
   @apply rounded-tr-lg rounded-bl-lg px-2 mr-2;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .categories li a {
   @apply text-tertiary font-inter;
   font-size: 14px;
 }
-

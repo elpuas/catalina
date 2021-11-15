@@ -21,6 +21,7 @@
     ```
 
     ## Commands
+
     ```shell
     gatsby develop // Once you’ve installed a Gatsby site, go to the root directory of your project and start the development server.
     gatsby build // At the root of a Gatsby site, compile your application and make it ready for deployment.
@@ -54,14 +55,14 @@
 ```
 
 5.  **DatoCMS**
-To Connect your dato API, is very simple, just create a env file `.env.example`
+    To Connect your dato API, is very simple, just create a env file `.env.example`
 
 ```shell
 DATO_API_TOKEN=YOUR_API_KEY
 ```
 
 6.  **Create Pages**
-To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
+    To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
 
 ```js
 const path = require('path');
@@ -102,6 +103,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
     });
 ```
+
 Here we are creating pages based on the model `Article`, the GraphQL endpoint will be `allDatoCmsArticle`.
 
 This theme uses `gatsby-source-datocms` [visit the documentation](https://www.gatsbyjs.com/plugins/gatsby-source-datocms/) for all the options.
@@ -120,7 +122,8 @@ This theme uses `gatsby-source-datocms` [visit the documentation](https://www.ga
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-9.  **DatoCMS Documentation**
+8.  **DatoCMS Documentation**
+
     - [Documentation](https://www.datocms.com/docs)
 
     - [Content Modeling](https://www.datocms.com/docs/content-modelling)

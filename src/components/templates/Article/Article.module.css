@@ -1,31 +1,31 @@
 .article {
-    @apply mt-9;
+  @apply mt-9;
 }
 
 .article h2 {
-    @apply text-sectionHeader text-primary font-interBold mb-14;
+  @apply text-sectionHeader text-primary font-interBold mb-14;
 }
 
 .article p {
-    @apply mb-14;
+  @apply mb-14;
 }
 
 .heroInner {
-    @apply max-w-screen-xl mx-auto relative z-10;
+  @apply max-w-screen-xl mx-auto relative z-10;
 }
 
 .meta ul {
-    @apply flex;
+  @apply flex;
 }
 
 .meta li {
-    @apply text-tertiary mr-4;
+  @apply text-tertiary mr-4;
 }
 
 .meta li svg {
-    @apply fill-current;
+  @apply fill-current;
 }
 
 .heroInner h1 {
-    @apply text-tertiary leading-none;
+  @apply text-tertiary leading-none;
 }

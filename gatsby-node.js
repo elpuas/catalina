@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -13,16 +13,16 @@ exports.createPages = ({ graphql, actions }) => {
   const createArticle = new Promise((resolve, reject) => {
     try {
       graphql(`
-      {
-        allDatoCmsArticle {
-          edges {
-            node {
-              id
-              slug
+        {
+          allDatoCmsArticle {
+            edges {
+              node {
+                id
+                slug
+              }
             }
           }
         }
-      }
       `).then((res) => {
         const articles = res.data.allDatoCmsArticle.edges;
         articles.forEach(({ node: post }) => {
@@ -34,10 +34,12 @@ exports.createPages = ({ graphql, actions }) => {
            * Pass article data to template.
            * @param {string} slug - Article slug.
            * @returns {void}
-          */
+           */
           createPage({
             path: `/blog/${slug}`,
-            component: path.resolve('./src/components/templates/Article/Article.js'),
+            component: path.resolve(
+              "./src/components/templates/Article/Article.js"
+            ),
             context: {
               slug,
             },
@@ -53,16 +55,17 @@ exports.createPages = ({ graphql, actions }) => {
   const createPages = new Promise((resolve, reject) => {
     try {
       graphql(`
-      {
-        allDatoCmsPage {
-          edges {
-            node {
-              slug
-              id
+        {
+          allDatoCmsPage {
+            edges {
+              node {
+                slug
+                id
+              }
             }
           }
         }
-      }`).then((res) => {
+      `).then((res) => {
         const pages = res.data.allDatoCmsPage.edges;
 
         pages.forEach(({ node: page }) => {
@@ -73,10 +76,10 @@ exports.createPages = ({ graphql, actions }) => {
            * Pass page data to template.
            * @param {string} slug - Page slug.
            * @returns {void}
-          */
+           */
           createPage({
             path: `/${slug}`,
-            component: path.resolve('./src/components/templates/Page/Page.js'),
+            component: path.resolve("./src/components/templates/Page/Page.js"),
             context: {
               slug,
             },

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import * as styles from './BlockContent.module.css';
-import Content from '../../bricks/Content/Content';
+import * as React from "react";
+import PropTypes from "prop-types";
+import * as styles from "./BlockContent.module.css";
+import Content from "../../bricks/Content/Content";
 /**
  * BlockContent component
  *
@@ -22,22 +22,23 @@ export default function BlockContent(props) {
 BlockContent.defaultProps = {
   content: {
     value: {
-      schema: 'dast',
+      schema: "dast",
       document: {
-        type: 'root',
+        type: "root",
         children: [
           {
-            type: 'heading',
+            type: "heading",
             level: 1,
             children: [
               {
-                type: 'span',
-                value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                type: "span",
+                value:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
               },
               {
-                type: 'span',
-                marks: ['strong'],
-                value: 'Ut enim ad minim veniam',
+                type: "span",
+                marks: ["strong"],
+                value: "Ut enim ad minim veniam",
               },
             ],
           },

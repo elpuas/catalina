@@ -1,5 +1,5 @@
 .blockTextImage {
-    @apply grid w-full md:grid-cols-12 gap-5 mb-20;
+  @apply grid w-full md:grid-cols-12 gap-5 mb-20;
 }
 
 .blockTextImage > * {
@@ -13,4 +13,3 @@
 .blockTextImage h2 strong {
   @apply text-secondary;
 }
-

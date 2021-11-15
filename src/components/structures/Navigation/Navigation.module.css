@@ -2,11 +2,11 @@
   @apply z-50;
 }
 
-.navigation > div[role='button'] {
+.navigation > div[role="button"] {
   @apply block z-50;
 }
 
-.isDesktop > div[role='button'] {
+.isDesktop > div[role="button"] {
   @apply hidden;
 }
 
@@ -39,9 +39,9 @@
 }
 
 .navigation > [role="button"] > div > div {
-  background: #5E6F00 !important;
+  background: #5e6f00 !important;
 }
 
 .navigation.isOpen > [role="button"] > div > div {
-  background: #D8FF00 !important;
+  background: #d8ff00 !important;
 }
