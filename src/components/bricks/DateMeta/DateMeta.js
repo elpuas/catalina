@@ -1,7 +1,7 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { ClockICO } from "../Icons/Icons";
-import * as styles from "./DateMeta.module.css";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { ClockICO } from '../Icons/Icons';
+import * as styles from './DateMeta.module.css';
 /**
  * The date component.
  *
@@ -23,5 +23,5 @@ DateMeta.propTypes = {
 };
 
 DateMeta.defaultProps = {
-  date: "10/24/2021",
+  date: '10/24/2021',
 };
