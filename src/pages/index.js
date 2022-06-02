@@ -1,37 +1,25 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { graphql } from "gatsby";
-import * as React from "react";
-import Author from "../components/bricks/Author/Author";
-import BlockCode from "../components/blocks/BlockCode/BlockCode";
-import BlockContent from "../components/blocks/BlockContent/BlockContent";
-import Button from "../components/bricks/Button/Button";
-import Category from "../components/bricks/Category/Category";
-import DateMeta from "../components/bricks/DateMeta/DateMeta";
-import Heading from "../components/bricks/Heading/Heading";
-import Layout from "../components/bricks/Layout/Layout";
-import SEO from "../components/bricks/Seo/Seo";
-import Observables from "../components/bricks/Observables/Observables";
+import { graphql } from 'gatsby';
+import * as React from 'react';
+import { PropTypes } from 'prop-types';
+import Layout from '../components/bricks/Layout/Layout';
+import SEO from '../components/bricks/Seo/Seo';
+import Observables from '../components/bricks/Observables/Observables';
+import * as styles from '../components/templates/Page/Page.module.css';
+import Blocks from '../components/blocks/Blocks/Blocks';
 
 export default function IndexPage({ data }) {
-  const seo = data.datoCmsFrontPage;
+  const { content, seo } = data.datoCmsFrontPage;
   return (
     <Layout>
-      <main>
-        <SEO {...seo} />
-        <Heading level="1">Catalina</Heading>
-        <Author />
-        <Category />
-        <DateMeta />
-        <Button />
-        <Button mode="secondary" />
-        <BlockContent />
-        <BlockCode />
+      <SEO {...seo} />
+      <main className={styles.main}>
         <Observables
           isVisibleClass="isVisible"
           customClass="observable-index"
           threshold={0.75}
         >
-          <BlockContent />
+          <Blocks blocks={content} />
         </Observables>
       </main>
     </Layout>
@@ -39,14 +27,62 @@ export default function IndexPage({ data }) {
 }
 
 export const SeoQuery = graphql`
-  query MetaTags {
-    datoCmsFrontPage {
-      seoMetaTags {
-        tags
+    query FrontPage {
+      datoCmsFrontPage {
+        title
+        slug
+        content {
+          ... on DatoCmsBlockHeroContent {
+            eyebrow
+            heading {
+              value
+            }
+            model {
+              apiKey
+            }
+            ...Links
+          }
+          ... on DatoCmsBlockVideoHero {
+            model {
+              apiKey
+            }
+            ...CalloutVideo
+            videoUrl
+            thumbnail {
+              gatsbyImageData
+              url
+            }
+          }
+          ... on DatoCmsBlockSelectedArticlesHero {
+            model {
+              apiKey
+            }
+            ...CalloutArticle
+            articles {
+              featuredImage {
+                gatsbyImageData
+                url
+              }
+              title
+              slug
+            }
+          }
+        }
+        seoMetaTags {
+          tags
+        }
+        pageDescription {
+          description
+        }
       }
-      pageDescription {
-        description
-      }
-    }
   }
 `;
+
+IndexPage.defaultProps = {
+  data: null,
+};
+
+IndexPage.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.any,
+};
