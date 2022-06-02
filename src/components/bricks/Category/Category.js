@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 /* eslint-disable react/no-array-index-key */
-import * as React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import * as styles from "./Category.module.css";
+import * as React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import * as styles from './Category.module.css';
 
 /**
  * The category component
@@ -30,5 +30,5 @@ Category.propTypes = {
 };
 
 Category.defaultProps = {
-  categories: [{ slug: "/", title: "code" }],
+  categories: [{ slug: '/', title: 'code' }],
 };

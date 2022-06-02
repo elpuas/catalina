@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 
-// eslint-disable-next-line import/prefer-default-export
 export const calloutVideo = graphql`
   fragment CalloutVideo on DatoCmsBlockVideoHero {
     callout {

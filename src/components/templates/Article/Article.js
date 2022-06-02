@@ -143,6 +143,15 @@ export const articleQuery = graphql`
             value
           }
         }
+        ... on DatoCmsBlockImage {
+          alignment
+          model {
+            apiKey
+          }
+          image {
+            gatsbyImageData
+          }
+        }
       }
     }
   }

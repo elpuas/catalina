@@ -1,5 +1,5 @@
 .footer {
-  @apply max-w-screen-lg mx-auto flex flex-col justify-center text-center uppercase font-interBold text-base text-primary mt-20;
+  @apply max-w-screen-lg mx-auto flex flex-col justify-center text-center uppercase font-interBold text-base text-primary pt-20 clear-both;
 }
 
 .footer ul {

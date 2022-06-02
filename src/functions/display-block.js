@@ -5,6 +5,8 @@ import BlockContent from '../components/blocks/BlockContent/BlockContent';
 import BlockTextImage from '../components/blocks/BlockTextImage/BlockTextImage';
 import BlockVideo from '../components/blocks/BlockVideo/BlockVideo';
 import BlockHeroContent from '../components/blocks/BlockHeroContent/BlockHeroContent';
+import BlockSelectedArticlesHero from '../components/blocks/BlockSelectedArticlesHero/BlockSelectedArticlesHero';
+import BlockImage from '../components/blocks/BlockImage/BlockImage';
 /**
  * Decide which block component to display.
  *
@@ -19,17 +21,23 @@ export default function displayBlock(block, index) {
     case 'block_code':
       return <BlockCode {...block} key={index} />;
 
+    case 'block_hero_content':
+      return <BlockHeroContent {...block} key={index} />;
+
+    case 'block_image':
+      return <BlockImage {...block} key={index} />;
+
     case 'block_paragraph':
       return <BlockContent {...block} key={index} />;
+
+    case 'block_selected_articles_hero':
+      return <BlockSelectedArticlesHero {...block} key={index} />;
 
     case 'block_text_and_image':
       return <BlockTextImage {...block} key={index} />;
 
     case 'block_video_hero':
       return <BlockVideo {...block} key={index} />;
-
-    case 'block_hero_content':
-      return <BlockHeroContent {...block} key={index} />;
 
     default:
       return <pre key={index}>{JSON.stringify(block, null, 2)}</pre>;

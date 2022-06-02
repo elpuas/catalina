@@ -4,7 +4,6 @@ import * as React from 'react';
 import { PropTypes } from 'prop-types';
 import Layout from '../components/bricks/Layout/Layout';
 import SEO from '../components/bricks/Seo/Seo';
-import Observables from '../components/bricks/Observables/Observables';
 import * as styles from '../components/templates/Page/Page.module.css';
 import Blocks from '../components/blocks/Blocks/Blocks';
 
@@ -14,13 +13,7 @@ export default function IndexPage({ data }) {
     <Layout>
       <SEO {...seo} />
       <main className={styles.main}>
-        <Observables
-          isVisibleClass="isVisible"
-          customClass="observable-index"
-          threshold={0.75}
-        >
-          <Blocks blocks={content} />
-        </Observables>
+        <Blocks blocks={content} />
       </main>
     </Layout>
   );
@@ -59,6 +52,11 @@ export const SeoQuery = graphql`
             }
             ...CalloutArticle
             articles {
+              articleAuthor
+              categories {
+                title
+                slug
+              }
               featuredImage {
                 gatsbyImageData
                 url

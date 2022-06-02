@@ -1,0 +1,46 @@
+.blockImage {
+  @apply relative;
+}
+
+.alignfull {
+  margin: 64px calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+  max-height: 480px;
+}
+
+.alignfull > div {
+  @apply w-full object-cover;
+  max-height: 480px;
+}
+
+.alignright,
+.alignleft, {
+  @apply w-1/2 h-3/6 p-4 overflow-hidden;
+}
+
+.alignright img,
+.alignleft img,
+.alignfull img {
+    @apply w-full h-full object-cover;
+}
+
+.alignright + div:not(.alignright):not(.alignleft) {
+  @apply float-none w-1/2 md:float-left;
+}
+
+.alignleft + div:not(.alignright):not(.alignleft) {
+  @apply float-none md:float-right w-1/2;
+}
+
+.alignright {
+  @apply float-none md:float-right w-full md:w-1/2 h-3/6 p-4 overflow-hidden;
+}
+
+.alignleft {
+  @apply float-none md:float-left w-full md:w-1/2 h-3/6 p-4 overflow-hidden;
+}
+
+.aligncenter {
+  @apply w-full mx-auto;
+}

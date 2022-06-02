@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-tertiary;
+  @apply bg-tertiary overflow-x-hidden;
 }
 
 .alignfull {

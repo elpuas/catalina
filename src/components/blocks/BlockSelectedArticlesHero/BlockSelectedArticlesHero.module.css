@@ -1,0 +1,7 @@
+.articles {
+  @apply grid grid-cols-12 gap-5;
+}
+
+.articles div {
+  @apply col-span-6;
+}

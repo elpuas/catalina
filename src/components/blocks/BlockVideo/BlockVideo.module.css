@@ -14,10 +14,3 @@
   @apply col-span-6;
 }
 
-.blockVideo h2 {
-  @apply tracking-tighter leading-tight mb-4 text-primary;
-}
-
-.blockVideo div > p {
-  @apply text-primary text-sectionContent mb-7;
-}

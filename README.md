@@ -2,7 +2,7 @@
 
 ## 🚀 Quick start
 
-1.  **Clone the Repo.**
+1. **Clone the Repo.**
 
     Use the terminal to clone the repo.
 
@@ -11,7 +11,7 @@
     https://github.com/elpuas/catalina.git
     ```
 
-2.  **Start developing.**
+2. **Start developing.**
 
     Navigate into your new site’s directory install packages and start it up.
 
@@ -20,7 +20,7 @@
     npm install && gatsby develop
     ```
 
-    ## Commands
+## Commands
 
     ```shell
     gatsby develop // Once you’ve installed a Gatsby site, go to the root directory of your project and start the development server.
@@ -31,13 +31,13 @@
     npm run viewer // View your Tailwind config file.
     ```
 
-3.  **Open the code and start customizing!**
+3. **Open the code and start customizing!**
 
-    Your site is now running at http://localhost:8000!
+    Your site is now running at <http://localhost:8000>!
 
     Edit `src/pages/index.js` to see your site update in real-time!
 
-4.  **Theme Structure**
+4. **Theme Structure**
 
 ```shell
 ├── src
@@ -54,14 +54,14 @@
     └── styles
 ```
 
-5.  **DatoCMS**
+5. **DatoCMS**
     To Connect your dato API, is very simple, just create a env file `.env.example`
 
 ```shell
 DATO_API_TOKEN=YOUR_API_KEY
 ```
 
-6.  **Create Pages**
+6. **Create Pages**
     To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
 
 ```js
@@ -108,7 +108,21 @@ Here we are creating pages based on the model `Article`, the GraphQL endpoint wi
 
 This theme uses `gatsby-source-datocms` [visit the documentation](https://www.gatsbyjs.com/plugins/gatsby-source-datocms/) for all the options.
 
-7.  **Gatsby Documentation**
+7. **Components, Blocks, Bricks, Structures and Templates**
+
+In the components directory, they are separated following a pattern similar to Atomic Design.
+
+```shell
+├── components
+      ├── blocks
+      ├── bricks
+      ├── structures
+      └── templates
+```
+
+Blocks represent the fields that exist in the CMS and are a collection of Bricks, Bricks are the building blocks for our components, Structures are sections made with bricks, like our Navigation or Header, and Finally we have templates that puts together Blocks and Structures.
+
+8. **Gatsby Documentation**
 
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
@@ -122,10 +136,10 @@ This theme uses `gatsby-source-datocms` [visit the documentation](https://www.ga
 
     - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-8.  **DatoCMS Documentation**
+8. **DatoCMS Documentation**
 
     - [Documentation](https://www.datocms.com/docs)
 
     - [Content Modeling](https://www.datocms.com/docs/content-modelling)
 
-# Do you have a website project? Let's talk.
+# Do you have a website project? Let's talk
