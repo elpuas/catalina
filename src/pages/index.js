@@ -27,6 +27,7 @@ export const SeoQuery = graphql`
         content {
           ... on DatoCmsBlockHeroContent {
             eyebrow
+            heroAlign
             heading {
               value
             }
@@ -53,6 +54,8 @@ export const SeoQuery = graphql`
             ...CalloutArticle
             articles {
               articleAuthor
+              slug
+              title
               categories {
                 title
                 slug
@@ -61,8 +64,6 @@ export const SeoQuery = graphql`
                 gatsbyImageData
                 url
               }
-              title
-              slug
             }
           }
         }

@@ -1,0 +1,40 @@
+.card {
+  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105;
+  height: 316px;
+}
+
+.card a {
+  @apply flex h-full w-full;
+}
+
+.card a > div {
+  flex: 1 1 50%;
+}
+
+.card a:hover .cardContent {
+  @apply text-primary;
+}
+
+.cardContent {
+  @apply py-4 pl-4 flex flex-col justify-between text-tertiary;
+}
+
+.card a:hover .cardContent svg {
+  @apply text-primary;
+}
+
+.cardContent svg {
+  @apply fill-current text-tertiary;
+}
+
+.cardImage {
+  @apply relative;
+}
+
+.cardImage > div {
+  @apply h-full;
+}
+
+.cardImage ul {
+  @apply absolute top-2 right-0 h-6;
+}

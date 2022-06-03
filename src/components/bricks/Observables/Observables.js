@@ -44,5 +44,5 @@ Observables.propTypes = {
 };
 
 Observables.defaultProps = {
-  threshold: 0.5,
+  threshold: 1,
 };

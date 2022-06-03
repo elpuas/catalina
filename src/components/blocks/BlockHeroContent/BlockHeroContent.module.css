@@ -1,5 +1,25 @@
-.hero {}
+.hero {
+  @apply my-28;
+}
 
-.heading {}
+.alignCenter {
+  @apply text-center;
+}
 
-.eyebrow {}
+.alignLeft {
+  @apply text-left;
+}
+
+.hero .heading {
+  @apply text-hero text-primary leading-tight my-8;
+}
+
+.hero .heading p strong {
+  @apply text-secondary;
+}
+
+.hero .eyebrow {
+  @apply text-sectionContent uppercase text-primary;
+
+  letter-spacing: 3px;
+}

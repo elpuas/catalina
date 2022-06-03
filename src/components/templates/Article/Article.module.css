@@ -1,12 +1,24 @@
 .article {
-  @apply mt-9;
+  @apply mt-0 relative;
 }
 
-.article h2 {
+.article header {
+  @apply absolute w-full max-w-7xl top-0 mx-auto z-50;
+}
+
+.article header svg {
+  @apply text-tertiary fill-current;
+}
+
+.article header a {
+  @apply text-tertiary;
+}
+
+.articleContent h2 {
   @apply text-sectionHeader text-primary font-interBold mb-14;
 }
 
-.article p {
+.articleContent p {
   @apply mb-14;
 }
 

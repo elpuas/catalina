@@ -1,5 +1,5 @@
 .header {
-  @apply flex items-center justify-between;
+  @apply flex items-center justify-between mt-8 px-8;
 }
 
 .header svg {

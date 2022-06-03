@@ -1,10 +1,11 @@
 import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import Heading from '../Heading/Heading';
 import Author from '../Author/Author';
 import * as styles from './Card.module.css';
 import Category from '../Category/Category';
+import Image from '../Image/Image';
 
 /**
  * The Card Brick component.
@@ -20,21 +21,23 @@ import Category from '../Category/Category';
  */
 export default function Card(props) {
   const {
-    title, articleAuthor, slug, featuredImage, categories,
+    title, articleAuthor, slug, image, categories,
   } = props;
 
   return (
     <div className={styles.card}>
-      <div className={styles.cardContent}>
-        <Heading className={styles.heading} level="3">
-          {title}
-        </Heading>
-        <Author author={articleAuthor} />
-      </div>
-      <div className={styles.cardImage}>
-        <GatsbyImage image={featuredImage.gatsbyImageData} alt="slug" />
-        <Category categories={categories} />
-      </div>
+      <Link to={`/blog/${slug}`}>
+        <div className={styles.cardContent}>
+          <Heading className={styles.heading} level="3">
+            {title}
+          </Heading>
+          <Author author={articleAuthor} />
+        </div>
+        <div className={styles.cardImage}>
+          <Image image={image} alt={`card-${slug}`} />
+          <Category categories={categories} />
+        </div>
+      </Link>
     </div>
   );
 }
@@ -43,7 +46,7 @@ Card.defaultProps = {
   title: 'Card Title',
   articleAuthor: 'ElPuas',
   slug: '/',
-  featuredImage: {},
+  image: {},
   categories: [{ slug: '/', title: 'code' }],
 };
 
@@ -52,6 +55,6 @@ Card.propTypes = {
   articleAuthor: PropTypes.string,
   slug: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
-  featuredImage: PropTypes.object,
+  image: PropTypes.object,
   categories: PropTypes.arrayOf(PropTypes.object),
 };

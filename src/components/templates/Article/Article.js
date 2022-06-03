@@ -1,18 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { GatsbyImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
-import * as React from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import * as styles from "./Article.module.css";
-import Author from "../../bricks/Author/Author";
-import Blocks from "../../blocks/Blocks/Blocks";
-import Category from "../../bricks/Category/Category";
-import DateMeta from "../../bricks/DateMeta/DateMeta";
-import Heading from "../../bricks/Heading/Heading";
-import HeroContainer from "../../bricks/HeroContainer/HeroContainer";
-import Layout from "../../bricks/Layout/Layout";
-import SEO from "../../bricks/Seo/Seo";
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
+import * as React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import * as styles from './Article.module.css';
+import Author from '../../bricks/Author/Author';
+import Blocks from '../../blocks/Blocks/Blocks';
+import Category from '../../bricks/Category/Category';
+import DateMeta from '../../bricks/DateMeta/DateMeta';
+import Heading from '../../bricks/Heading/Heading';
+import HeroContainer from '../../bricks/HeroContainer/HeroContainer';
+import Layout from '../../bricks/Layout/Layout';
+import SEO from '../../bricks/Seo/Seo';
 
 /**
  * The Article component.
@@ -40,10 +40,10 @@ export default function Article({ data }) {
   };
 
   const date = new Date(meta.publishedAt);
-  const createdOn = date.toLocaleDateString("en-US");
+  const createdOn = date.toLocaleDateString('en-US');
 
   return (
-    <>
+    <div className={styles.article}>
       <Layout>
         <SEO {...seo} />
         <HeroContainer>
@@ -66,11 +66,11 @@ export default function Article({ data }) {
             </div>
           </div>
         </HeroContainer>
-        <main className={cx(styles.article, `article-${slug}`)}>
+        <main className={cx(styles.siteContent, `article-${slug}`)}>
           <Blocks blocks={content} />
         </main>
       </Layout>
-    </>
+    </div>
   );
 }
 
