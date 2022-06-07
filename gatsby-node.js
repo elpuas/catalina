@@ -93,5 +93,47 @@ exports.createPages = ({ graphql, actions }) => {
     }
   });
 
-  return Promise.all([createArticle, createPages]);
+  const createCategories = new Promise((resolve, reject) => {
+    try {
+      graphql(`
+        {
+          allDatoCmsCategory {
+            edges {
+              node {
+                slug
+                id
+                title
+              }
+            }
+          }
+        }
+      `).then((res) => {
+        const pages = res.data.allDatoCmsCategory.edges;
+
+        pages.forEach(({ node: page }) => {
+          const { slug, title } = page;
+          /**
+           * Create page for each page.
+           * Create slug for template.
+           * Pass page data to template.
+           * @param {string} slug - Page slug.
+           * @returns {void}
+           */
+          createPage({
+            path: `/category/${slug}`,
+            component: path.resolve("./src/components/templates/Categories/Categories.js"),
+            context: {
+              slug,
+              title
+            },
+          });
+        });
+        resolve();
+      });
+    } catch (error) {
+      reject(error);
+    }
+  });
+
+  return Promise.all([createArticle, createPages, createCategories]);
 };

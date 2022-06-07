@@ -1,12 +1,12 @@
-import { Link, graphql, useStaticQuery } from "gatsby";
-import { Squash as Hamburger } from "hamburger-react";
-import { useState, useEffect } from "react";
-import * as React from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import * as styles from "./Navigation.module.css";
-import { useAppContext } from "../../context/AppContext";
-import useMediaQuery from "../../../hooks/useMediaQuery";
+import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Squash as Hamburger } from 'hamburger-react';
+import { useState, useEffect } from 'react';
+import * as React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import * as styles from './Navigation.module.css';
+import { useAppContext } from '../../context/AppContext';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 
 /**
  * The Navigation Component
@@ -46,7 +46,7 @@ export default function Navigation() {
   `);
 
   const { menu } = data.allDatoCmsNavigation.nodes[0];
-  const isDesktop = useMediaQuery("(min-width: 1024px)");
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
   const [isOpen, setOpen] = useState(false);
   const { handleSetIsMenuOpen } = useAppContext();
 
@@ -59,7 +59,7 @@ export default function Navigation() {
       className={cx(
         styles.navigation,
         isDesktop && styles.isDesktop,
-        isOpen && styles.isOpen
+        isOpen && styles.isOpen,
       )}
     >
       <Hamburger toggled={isOpen} toggle={setOpen} rounded />
@@ -67,15 +67,17 @@ export default function Navigation() {
         className={cx(
           styles.menu,
           isDesktop ? styles.desktop : styles.mobile,
-          isOpen && styles.displayNav
+          isOpen && styles.displayNav,
         )}
       >
         <ul className={styles.list}>
           {menu.map((link) => (
             <li key={link?.id} className={styles.link}>
               <Link
-                to={link.model.apiKey === "front_page" ? "/" : `/${link.slug}`}
-              >{`${link.title}.`}</Link>
+                to={link.model.apiKey === 'front_page' ? '/' : `/${link.slug}`}
+              >
+                {`${link.title}.`}
+              </Link>
             </li>
           ))}
         </ul>
@@ -91,7 +93,7 @@ Navigation.propTypes = {
 
 Navigation.defaultProps = {
   menu: [
-    { slug: "/", name: "Home" },
-    { slug: "/", name: "About" },
+    { slug: '/', name: 'Home' },
+    { slug: '/', name: 'About' },
   ],
 };

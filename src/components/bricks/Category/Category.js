@@ -16,7 +16,7 @@ import * as styles from './Category.module.css';
 export default function Category({ categories }) {
   return (
     <ul className={styles.categories}>
-      {categories.map((cat, index) => (
+      {Array.isArray(categories) && categories.map((cat, index) => (
         <li key={index}>
           <Link to={`/category/${cat.slug}`}>{cat.title}</Link>
         </li>
@@ -26,7 +26,7 @@ export default function Category({ categories }) {
 }
 
 Category.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object),
+  categories: PropTypes.arrayOf(PropTypes.object) || PropTypes.bool,
 };
 
 Category.defaultProps = {

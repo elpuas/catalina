@@ -41,3 +41,7 @@
 .heroInner h1 {
   @apply text-tertiary leading-none;
 }
+
+.article nav > div[role="button"] > div > div {
+  background: #D8FF00 !important;
+}
