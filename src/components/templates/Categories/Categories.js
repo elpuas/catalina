@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Card from '../../bricks/Card/Card';
-import Heading from '../../bricks/Heading/Heading';
-import Layout from '../../bricks/Layout/Layout';
-import * as styles from './Categories.module.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Card from "../../bricks/Card/Card";
+import Heading from "../../bricks/Heading/Heading";
+import Layout from "../../bricks/Layout/Layout";
+import * as styles from "./Categories.module.css";
 
 /**
  *  The Categories component.
@@ -25,14 +25,19 @@ export default function Categories({ data, pageContext }) {
       <Layout>
         <Heading level="1">{pageContext.title}</Heading>
         <div className={styles.cards}>
-          { Array.isArray(edges) && edges.map(({ node }) => {
-            const {
-              id, title, slug, featuredImage,
-            } = node;
-            return (
-              <Card key={id} title={title} slug={slug} image={featuredImage} categories={false} />
-            );
-          })}
+          {Array.isArray(edges) &&
+            edges.map(({ node }) => {
+              const { id, title, slug, featuredImage } = node;
+              return (
+                <Card
+                  key={id}
+                  title={title}
+                  slug={slug}
+                  image={featuredImage}
+                  categories={false}
+                />
+              );
+            })}
         </div>
       </Layout>
     </div>
@@ -40,8 +45,10 @@ export default function Categories({ data, pageContext }) {
 }
 
 export const articleQuery = graphql`
-  query CategoryQuery( $slug: String! ) {
-    allDatoCmsArticle( filter: {categories: {elemMatch: {slug: {eq: $slug }}}} ) {
+  query CategoryQuery($slug: String!) {
+    allDatoCmsArticle(
+      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
+    ) {
       edges {
         node {
           id

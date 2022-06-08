@@ -15,14 +15,14 @@
 }
 
 .alignright,
-.alignleft, {
+.alignleft {
   @apply w-1/2 h-3/6 p-4 overflow-hidden;
 }
 
 .alignright img,
 .alignleft img,
 .alignfull img {
-    @apply w-full h-full object-cover;
+  @apply w-full h-full object-cover;
 }
 
 .alignright + div:not(.alignright):not(.alignleft) {

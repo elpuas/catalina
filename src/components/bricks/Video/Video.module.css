@@ -1,5 +1,5 @@
 .videoWrapper {
-  @apply relative h-0 max-h-96;
+  @apply relative max-h-96 w-full;
   padding-bottom: 42.25%; /* 16:9 */
 }
 

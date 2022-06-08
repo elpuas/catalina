@@ -1,7 +1,7 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import * as styles from './Author.module.css';
-import { SkullICO } from '../Icons/Icons';
+import * as React from "react";
+import PropTypes from "prop-types";
+import * as styles from "./Author.module.css";
+import { SkullICO } from "../Icons/Icons";
 /**
  * The author component.
  *
@@ -24,5 +24,5 @@ Author.propTypes = {
 };
 
 Author.defaultProps = {
-  author: 'ElPuas',
+  author: "ElPuas",
 };

@@ -121,10 +121,12 @@ exports.createPages = ({ graphql, actions }) => {
            */
           createPage({
             path: `/category/${slug}`,
-            component: path.resolve("./src/components/templates/Categories/Categories.js"),
+            component: path.resolve(
+              "./src/components/templates/Categories/Categories.js"
+            ),
             context: {
               slug,
-              title
+              title,
             },
           });
         });

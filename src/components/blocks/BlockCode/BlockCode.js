@@ -1,8 +1,8 @@
-import { duotoneSea } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import * as styles from './BlockCode.module.css';
+import { duotoneSea } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import * as React from "react";
+import PropTypes from "prop-types";
+import * as styles from "./BlockCode.module.css";
 /**
  * The code block component.
  *
@@ -39,7 +39,7 @@ BlockCode.propTypes = {
           PropTypes.shape({
             language: PropTypes.string,
             code: PropTypes.string,
-          }),
+          })
         ),
       }),
     }),
@@ -52,7 +52,7 @@ BlockCode.defaultProps = {
       document: {
         children: [
           {
-            language: 'javascript',
+            language: "javascript",
             code: '() => { console.log("Hello World")}',
           },
         ],

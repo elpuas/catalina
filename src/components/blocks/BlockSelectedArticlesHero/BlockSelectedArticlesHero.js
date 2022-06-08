@@ -18,9 +18,9 @@ export default function BlockSelectedArticlesHero(props) {
   return (
     <div className={styles.articles}>
       <div className={styles.articlesContent}>
-        { articles && articles.map((article, index) => (
+        { Array.isArray(articles) && articles.map((article, index) => (
           <Card
-          // eslint-disable-next-line react/no-array-index-key
+              // eslint-disable-next-line react/no-array-index-key
             key={index}
             title={article.title}
             author={article.articleAuthor}

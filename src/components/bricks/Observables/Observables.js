@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 /* eslint-disable react/require-default-props */
-import * as React from 'react';
-import cx from 'classnames';
-import { InView } from 'react-intersection-observer';
-import { PropTypes } from 'prop-types';
+import * as React from "react";
+import cx from "classnames";
+import { InView } from "react-intersection-observer";
+import { PropTypes } from "prop-types";
 
 /**
  * Wrapper for react-intersection-observer

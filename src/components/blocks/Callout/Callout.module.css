@@ -2,7 +2,7 @@
 }
 
 .callout p {
-  @apply text-primary text-sectionContent mb-7
+  @apply text-primary text-sectionContent mb-7;
 }
 
 .callout .heading p {

@@ -4,21 +4,21 @@
 
 1. **Clone the Repo.**
 
-    Use the terminal to clone the repo.
+   Use the terminal to clone the repo.
 
-    ```shell
-    # clone the repo
-    https://github.com/elpuas/catalina.git
-    ```
+   ```shell
+   # clone the repo
+   https://github.com/elpuas/catalina.git
+   ```
 
 2. **Start developing.**
 
-    Navigate into your new site’s directory install packages and start it up.
+   Navigate into your new site’s directory install packages and start it up.
 
-    ```shell
-    cd catalina
-    npm install && gatsby develop
-    ```
+   ```shell
+   cd catalina
+   npm install && gatsby develop
+   ```
 
 ## Commands
 
@@ -33,9 +33,9 @@
 
 3. **Open the code and start customizing!**
 
-    Your site is now running at <http://localhost:8000>!
+   Your site is now running at <http://localhost:8000>!
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+   Edit `src/pages/index.js` to see your site update in real-time!
 
 4. **Theme Structure**
 
@@ -55,14 +55,14 @@
 ```
 
 5. **DatoCMS**
-    To Connect your dato API, is very simple, just create a env file `.env.example`
+   To Connect your dato API, is very simple, just create a env file `.env.example`
 
 ```shell
 DATO_API_TOKEN=YOUR_API_KEY
 ```
 
 6. **Create Pages**
-    To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
+   To create pages dynamically based on your models, you will need to update `gatsby-node.js` with your model, as an example:
 
 ```js
 const path = require('path');
@@ -124,22 +124,22 @@ Blocks represent the fields that exist in the CMS and are a collection of Bricks
 
 8. **Gatsby Documentation**
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+   - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
 
-8. **DatoCMS Documentation**
+9. **DatoCMS Documentation**
 
-    - [Documentation](https://www.datocms.com/docs)
+   - [Documentation](https://www.datocms.com/docs)
 
-    - [Content Modeling](https://www.datocms.com/docs/content-modelling)
+   - [Content Modeling](https://www.datocms.com/docs/content-modelling)
 
 # Do you have a website project? Let's talk
