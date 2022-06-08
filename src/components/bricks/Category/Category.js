@@ -26,7 +26,10 @@ export default function Category({ categories }) {
 }
 
 Category.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object) || PropTypes.bool,
+  categories: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.bool,
+  ]),
 };
 
 Category.defaultProps = {

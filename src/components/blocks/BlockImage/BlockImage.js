@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Image from '../../bricks/Image/Image';
 import * as styles from './BlockImage.module.css';
@@ -11,3 +12,13 @@ export default function BlockImage(props) {
     </div>
   );
 }
+
+BlockImage.defaultProps = {
+  image: null,
+  alignment: 'left',
+};
+
+BlockImage.propTypes = {
+  image: PropTypes.objectOf(PropTypes.any),
+  alignment: PropTypes.string,
+};

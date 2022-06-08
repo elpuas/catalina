@@ -20,7 +20,7 @@ export default function BlockTextImage(props) {
   return (
     <div className={styles.blockTextImage}>
       <StructuredText data={content} />
-      <GatsbyImage image={image?.gatsbyImageData} alt={image?.alt} />
+      <GatsbyImage image={image?.gatsbyImageData} alt={`block-${image?.alt}`} />
     </div>
   );
 }

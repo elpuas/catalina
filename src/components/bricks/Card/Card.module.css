@@ -1,5 +1,5 @@
 .card {
-  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105;
+  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105 relative;
   height: 316px;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .cardContent {
-  @apply py-4 pl-4 flex flex-col justify-between text-tertiary;
+  @apply py-4 px-4 flex flex-col justify-between text-tertiary;
 }
 
 .card a:hover .cardContent svg {
@@ -35,6 +35,6 @@
   @apply h-full;
 }
 
-.cardImage ul {
+.card ul {
   @apply absolute top-2 right-0 h-6;
 }

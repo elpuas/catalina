@@ -35,9 +35,9 @@ export default function Card(props) {
         </div>
         <div className={styles.cardImage}>
           <Image image={image} alt={`card-${slug}`} />
-          <Category categories={categories} />
         </div>
       </Link>
+      <Category categories={categories} />
     </div>
   );
 }
@@ -56,5 +56,8 @@ Card.propTypes = {
   slug: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
-  categories: PropTypes.arrayOf(PropTypes.object),
+  categories: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.bool,
+  ]),
 };

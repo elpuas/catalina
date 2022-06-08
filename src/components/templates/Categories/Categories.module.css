@@ -1,0 +1,12 @@
+
+.category .cards {
+  @apply grid grid-cols-12 gap-8 px-4;
+}
+
+.category .cards > div {
+  @apply col-span-12 md:col-span-6;
+}
+
+.category .cards > div:nth-child(3n+3) {
+  @apply col-span-12;
+}
