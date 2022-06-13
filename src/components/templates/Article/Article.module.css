@@ -7,7 +7,7 @@
 }
 
 .article header svg {
-  @apply text-tertiary fill-current;
+  @apply fill-tertiary;
 }
 
 .article header a {
@@ -35,7 +35,7 @@
 }
 
 .meta li svg {
-  @apply fill-current;
+  @apply fill-tertiary;
 }
 
 .heroInner h1 {

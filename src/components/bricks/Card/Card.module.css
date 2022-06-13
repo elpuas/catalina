@@ -1,6 +1,5 @@
 .card {
-  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105 relative;
-  height: 316px;
+  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105 relative h-[316px];
 }
 
 .card a {
@@ -24,7 +23,7 @@
 }
 
 .cardContent svg {
-  @apply fill-current text-tertiary;
+  @apply fill-tertiary;
 }
 
 .cardImage {

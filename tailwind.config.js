@@ -1,6 +1,5 @@
 module.exports = {
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
+  content: [],
   theme: {
     colors: {
       primary: '#5E6F00',
@@ -20,9 +19,6 @@ module.exports = {
       sectionContent: '1.5rem',
       base: '1.125rem',
     },
-    extend: {},
-  },
-  variants: {
     extend: {},
   },
   plugins: [],

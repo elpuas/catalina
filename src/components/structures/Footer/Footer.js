@@ -1,8 +1,8 @@
-import * as React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import * as styles from "./Footer.module.css";
-import { TwitterICO, GithubICO, WordPressICO } from "../../bricks/Icons/Icons";
+import * as React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import { TwitterICO, GithubICO, WordPressICO } from '../../bricks/Icons/Icons';
+import * as styles from './Footer.module.css';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -61,7 +61,7 @@ Footer.propTypes = {
       socialMedia: PropTypes.arrayOf(
         PropTypes.shape({
           link: PropTypes.string,
-        })
+        }),
       ),
     }),
   }),

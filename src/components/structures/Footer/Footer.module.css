@@ -11,5 +11,5 @@
 }
 
 .icons svg {
-  @apply fill-current text-primary w-14 h-14;
+  @apply fill-primary w-14 h-14;
 }

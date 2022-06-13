@@ -19,7 +19,5 @@
 }
 
 .hero .eyebrow {
-  @apply text-sectionContent uppercase text-primary;
-
-  letter-spacing: 3px;
+  @apply text-sectionContent uppercase text-primary tracking-[3px];
 }
