@@ -25,12 +25,17 @@
   @apply w-full h-full object-cover;
 }
 
-.alignright + div:not(.alignright):not(.alignleft) {
+.alignright + div:not(.alignright, .alignleft) {
   @apply float-none w-1/2 md:float-left;
 }
 
-.alignleft + div:not(.alignright):not(.alignleft) {
+.alignleft + div:not(.alignright, .alignleft) {
   @apply float-none md:float-right w-1/2;
+}
+
+.alignright + div:not(.alignright, .alignleft) + div,
+.alignleft + div:not(.alignright, .alignleft) + div {
+  @apply clear-both;
 }
 
 .alignright {
@@ -42,5 +47,5 @@
 }
 
 .aligncenter {
-  @apply w-full mx-auto;
+  @apply w-full mx-auto text-center;
 }
