@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StructuredText } from "react-datocms";
-import cx from "classnames";
-import Heading from "../../bricks/Heading/Heading";
-import Button from "../../bricks/Button/Button";
-import * as styles from "./BlockHeroContent.module.css";
-import Observables from "../../bricks/Observables/Observables";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StructuredText } from 'react-datocms';
+import cx from 'classnames';
+import Heading from '../../bricks/Heading/Heading';
+import Button from '../../bricks/Button/Button';
+import * as styles from './BlockHeroContent.module.css';
+import Observables from '../../bricks/Observables/Observables';
 
 /**
  * The HeroContent component is used to display a hero with a heading, eyebrow, and a button.
@@ -19,7 +19,9 @@ import Observables from "../../bricks/Observables/Observables";
  * @return {Element} The HeroContent component.
  */
 export default function BlockHeroContent(props) {
-  const { heading, eyebrow, link, heroAlign } = props;
+  const {
+    heading, eyebrow, link, heroAlign,
+  } = props;
   return (
     <Observables
       isVisibleClass="isVisible"
@@ -40,9 +42,9 @@ export default function BlockHeroContent(props) {
 
 BlockHeroContent.defaultProps = {
   heading: {},
-  eyebrow: "",
+  eyebrow: '',
   link: {},
-  heroAlign: "alignLeft",
+  heroAlign: 'alignLeft',
 };
 
 BlockHeroContent.propTypes = {

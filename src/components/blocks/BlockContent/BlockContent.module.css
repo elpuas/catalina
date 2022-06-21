@@ -3,5 +3,5 @@
 }
 
 .blockContent p {
-  @apply mb-8;
+  @apply mb-8 text-[1.5rem] leading-relaxed;
 }
