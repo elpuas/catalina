@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import cx from "classnames";
-import Image from "../../bricks/Image/Image";
-import * as styles from "./BlockImage.module.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import Image from '../../bricks/Image/Image';
+import * as styles from './BlockImage.module.css';
 
 export default function BlockImage(props) {
   const { image, alignment } = props;
@@ -15,10 +15,12 @@ export default function BlockImage(props) {
 
 BlockImage.defaultProps = {
   image: null,
-  alignment: "left",
+  alignment: 'left',
 };
 
 BlockImage.propTypes = {
-  image: PropTypes.objectOf(PropTypes.any),
+  image: PropTypes.objectOf(
+    PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  ),
   alignment: PropTypes.string,
 };

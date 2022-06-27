@@ -1,8 +1,8 @@
 /* eslint-disable react/require-default-props */
-import * as React from "react";
-import cx from "classnames";
-import PropTypes from "prop-types";
-import * as styles from "./Heading.module.css";
+import * as React from 'react';
+import cx from 'classnames';
+import PropTypes from 'prop-types';
+import * as styles from './Heading.module.css';
 /**
  * Renders the Heading component
  *
@@ -16,13 +16,13 @@ import * as styles from "./Heading.module.css";
 export default function Heading(props) {
   const { level, children, className } = props;
   switch (level) {
-    case "1":
+    case '1':
       return <h1 className={cx(styles.heading, className)}>{children}</h1>;
 
-    case "2":
+    case '2':
       return <h2 className={cx(styles.heading, className)}>{children}</h2>;
 
-    case "3":
+    case '3':
       return <h3 className={cx(styles.heading, className)}>{children}</h3>;
 
     default:

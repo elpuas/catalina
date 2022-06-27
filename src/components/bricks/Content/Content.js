@@ -1,7 +1,7 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { StructuredText } from "react-datocms";
-import * as styles from "./Content.module.css";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { StructuredText } from 'react-datocms';
+import * as styles from './Content.module.css';
 /**
  * Content component
  *
@@ -21,23 +21,23 @@ export default function Content({ content }) {
 Content.defaultProps = {
   content: {
     value: {
-      schema: "dast",
+      schema: 'dast',
       document: {
-        type: "root",
+        type: 'root',
         children: [
           {
-            type: "heading",
+            type: 'heading',
             level: 1,
             children: [
               {
-                type: "span",
+                type: 'span',
                 value:
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
               },
               {
-                type: "span",
-                marks: ["strong"],
-                value: "Ut enim ad minim veniam",
+                type: 'span',
+                marks: ['strong'],
+                value: 'Ut enim ad minim veniam',
               },
             ],
           },

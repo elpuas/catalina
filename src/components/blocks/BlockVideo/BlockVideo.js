@@ -1,11 +1,11 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/require-default-props */
-import { GatsbyImage } from "gatsby-plugin-image";
-import * as React from "react";
-import PropTypes from "prop-types";
-import * as styles from "./BlockVideo.module.css";
-import Callout from "../Callout/Callout";
-import Video from "../../bricks/Video/Video";
+import { GatsbyImage } from 'gatsby-plugin-image';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import * as styles from './BlockVideo.module.css';
+import Callout from '../Callout/Callout';
+import Video from '../../bricks/Video/Video';
 
 /**
  * The BlockVideo component.

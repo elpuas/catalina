@@ -79,6 +79,7 @@ Article.defaultProps = {
 };
 
 Article.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.objectOf(PropTypes.any),
 };
 

@@ -1,12 +1,12 @@
 /* eslint-disable react/require-default-props */
 /* eslint-disable react/forbid-prop-types */
-import { StructuredText } from "react-datocms";
-import * as React from "react";
-import PropTypes from "prop-types";
-import * as styles from "./Callout.module.css";
-import BlockContent from "../BlockContent/BlockContent";
-import Button from "../../bricks/Button/Button";
-import Heading from "../../bricks/Heading/Heading";
+import { StructuredText } from 'react-datocms';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import * as styles from './Callout.module.css';
+import BlockContent from '../BlockContent/BlockContent';
+import Button from '../../bricks/Button/Button';
+import Heading from '../../bricks/Heading/Heading';
 
 /**
  * The Callout component is used to display a callout with a heading, text, and a button.

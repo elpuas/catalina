@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import Heading from "../Heading/Heading";
-import Author from "../Author/Author";
-import * as styles from "./Card.module.css";
-import Category from "../Category/Category";
-import Image from "../Image/Image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import Heading from '../Heading/Heading';
+import Author from '../Author/Author';
+import * as styles from './Card.module.css';
+import Category from '../Category/Category';
+import Image from '../Image/Image';
 
 /**
  * The Card Brick component.
@@ -20,7 +20,9 @@ import Image from "../Image/Image";
  * @returns {Element}                  The Card Brick component.
  */
 export default function Card(props) {
-  const { title, articleAuthor, slug, image, categories } = props;
+  const {
+    title, articleAuthor, slug, image, categories,
+  } = props;
 
   return (
     <div className={styles.card}>
@@ -41,11 +43,11 @@ export default function Card(props) {
 }
 
 Card.defaultProps = {
-  title: "Card Title",
-  articleAuthor: "ElPuas",
-  slug: "/",
+  title: 'Card Title',
+  articleAuthor: 'ElPuas',
+  slug: '/',
   image: {},
-  categories: [{ slug: "/", title: "code" }],
+  categories: [{ slug: '/', title: 'code' }],
 };
 
 Card.propTypes = {

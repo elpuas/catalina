@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import * as styles from "./Video.module.css";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import * as styles from './Video.module.css';
 /**
  * Render the video block component
  *
@@ -27,7 +27,7 @@ export default function Video(props) {
           type="button"
           onClick={onClick}
           className={styles.thumbnail}
-          style={{ display: hideThumbnail ? "none" : "block" }}
+          style={{ display: hideThumbnail ? 'none' : 'block' }}
         >
           {children}
         </button>
@@ -39,7 +39,7 @@ export default function Video(props) {
           webkitallowfullscreen="true"
           mozallowfullscreen="true"
           allowFullScreen
-          style={{ display: hideThumbnail ? "block" : "none" }}
+          style={{ display: hideThumbnail ? 'block' : 'none' }}
         />
       </div>
     </div>
@@ -55,11 +55,11 @@ Video.propTypes = {
 
 Video.defaultProps = {
   videoUrl: {
-    url: "https://www.youtube.com/embed/Unqsu8aGy8Y",
+    url: 'https://www.youtube.com/embed/Unqsu8aGy8Y',
   },
-  videoTitle: "30 Seconds with Reemo at The Berrics Plaza",
-  children: React.createElement("img", {
-    src: "https://placekitten.com/800/600",
-    alt: "placeholder",
+  videoTitle: '30 Seconds with Reemo at The Berrics Plaza',
+  children: React.createElement('img', {
+    src: 'https://placekitten.com/800/600',
+    alt: 'placeholder',
   }),
 };

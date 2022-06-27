@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 /**
  * The SEO Component.
  *
@@ -17,13 +17,13 @@ export default function SEO(props) {
     pageDescription: { description },
   } = props;
 
-  const title = tags.filter((tag) => tag.tagName === "title");
+  const title = tags.filter((tag) => tag.tagName === 'title');
 
   return (
     <Helmet title={title[0]?.content}>
       <meta name="description" content={description} />
       {tags.map((tag, index) => {
-        if (tag.tagName === "meta") {
+        if (tag.tagName === 'meta') {
           return (
             <meta
               key={index}
@@ -35,7 +35,7 @@ export default function SEO(props) {
         return null;
       })}
       {tags.map((tag, index) => {
-        if (tag.tagName === "meta") {
+        if (tag.tagName === 'meta') {
           return (
             <meta
               key={index}
@@ -52,6 +52,7 @@ export default function SEO(props) {
 
 SEO.propTypes = {
   seoMetaTags: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
     tags: PropTypes.arrayOf(PropTypes.object),
   }),
   pageDescription: PropTypes.shape({ description: PropTypes.string }),
@@ -61,13 +62,13 @@ SEO.defaultProps = {
   seoMetaTags: {
     tags: [
       {
-        tagName: "title",
-        content: "Web Artisan, Developer and Open Source Enthusiast",
+        tagName: 'title',
+        content: 'Web Artisan, Developer and Open Source Enthusiast',
       },
     ],
   },
   pageDescription: {
     description:
-      "I am a Web Artisan based in beautiful Costa Rica. I run a small workshop of Digital Crafts, I do custom WordPress Development & The JAMStack with GatsbyJS.",
+      'I am a Web Artisan based in beautiful Costa Rica. I run a small workshop of Digital Crafts, I do custom WordPress Development & The JAMStack with GatsbyJS.',
   },
 };
