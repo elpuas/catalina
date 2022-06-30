@@ -80,6 +80,11 @@ export default function Navigation() {
               </Link>
             </li>
           ))}
+          <li className={styles.link}>
+            <Link to="/blog">
+              Blog.
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

@@ -1,0 +1,11 @@
+.gridContainer {
+  @apply grid grid-cols-12 gap-8 max-w-screen-lg mx-auto;
+}
+
+.gridItem {
+  @apply col-span-12 text-center md:col-span-4;
+}
+
+.pageTitle {
+  @apply text-sectionHeader;
+}

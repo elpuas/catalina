@@ -26,8 +26,7 @@ export default function BlockHeroContent(props) {
     <Observables
       isVisibleClass="isVisible"
       customClass="observable-index"
-      threshold={1}
-      triggerOnce
+      threshold={0.5}
     >
       <div className={cx(styles.hero, styles[heroAlign])}>
         <div className={styles.eyebrow}>{eyebrow}</div>

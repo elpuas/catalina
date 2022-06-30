@@ -23,7 +23,7 @@ export default function Observables({
   threshold,
 }) {
   return (
-    <InView threshold={threshold}>
+    <InView threshold={threshold} triggerOnce>
       {({ inView, ref }) => (
         <div
           ref={ref}
