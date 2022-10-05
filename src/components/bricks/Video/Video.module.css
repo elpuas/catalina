@@ -13,11 +13,15 @@
 }
 
 .thumbnail::before {
-  @apply absolute left-2/4 z-30 block;
-  top: 164px;
+  @apply absolute left-2/4 z-30 block rounded-full;
+  top: 115px;
   background-size: contain;
-  content: "";
+  content: "▶";
   width: 50px;
   height: 50px;
   transform: translate(-50%);
+  border: solid white;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.45;
 }

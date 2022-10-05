@@ -26,11 +26,11 @@
 }
 
 .alignright + div:not(.alignright, .alignleft) {
-  @apply float-none w-1/2 md:float-left;
+  @apply float-none md:w-1/2 md:float-left;
 }
 
 .alignleft + div:not(.alignright, .alignleft) {
-  @apply float-none md:float-right w-1/2;
+  @apply float-none md:float-right md:w-1/2;
 }
 
 .alignright + div:not(.alignright, .alignleft) + div,
