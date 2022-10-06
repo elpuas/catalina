@@ -1,27 +1,29 @@
 .videoWrapper {
-  @apply relative max-h-96 w-full;
-  padding-bottom: 42.25%; /* 16:9 */
+  @apply relative min-h-[500px] sm:max-h-96 w-full pb-0 sm:pb-[42.25%];
 }
 
 .videoWrapper iframe {
-  @apply absolute top-0 left-0 w-full h-full bg-tertiary;
-  max-height: 500px;
+  @apply absolute top-0 left-0 w-full h-full bg-tertiary h-[500px];
 }
 
 .thumbnail {
-  @apply w-full h-auto relative;
+  @apply w-full h-[500px] sm:h-auto relative;
+}
+
+.thumbnail > div > div {
+  @apply min-h-[500px] sm:min-h-full object-cover;
 }
 
 .thumbnail::before {
   @apply absolute left-2/4 z-30 block rounded-full;
-  top: 115px;
   background-size: contain;
-  content: "▶";
-  width: 50px;
-  height: 50px;
-  transform: translate(-50%);
   border: solid white;
   color: white;
+  content: "▶";
   font-size: 2rem;
+  height: 50px;
   line-height: 1.45;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
 }

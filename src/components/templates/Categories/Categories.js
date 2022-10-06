@@ -58,6 +58,7 @@ export const articleQuery = graphql`
           slug
           featuredImage {
             gatsbyImageData
+            alt
           }
         }
       }
@@ -71,6 +72,8 @@ Categories.defaultProps = {
 };
 
 Categories.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.objectOf(PropTypes.any),
+  // eslint-disable-next-line react/forbid-prop-types
   pageContext: PropTypes.objectOf(PropTypes.any),
 };

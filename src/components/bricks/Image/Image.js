@@ -10,8 +10,8 @@ import { GatsbyImage } from 'gatsby-plugin-image';
  * @return {Element} The image block component
  */
 export default function Image(props) {
-  const { image, alt } = props;
-  return <GatsbyImage image={image.gatsbyImageData} alt={alt} />;
+  const { image } = props;
+  return <GatsbyImage image={image.gatsbyImageData} alt={image.alt} />;
 }
 
 Image.propTypes = {

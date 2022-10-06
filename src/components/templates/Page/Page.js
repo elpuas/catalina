@@ -18,10 +18,15 @@ import SEO from "../../bricks/Seo/Seo";
 export default function Page({ data }) {
   const { content, seoMetaTags } = data.datoCmsPage;
 
+  const seoProps = {
+    seoMetaTags,
+    pageDescription: { description: seoMetaTags.tags[0].content },
+  };
+
   return (
     <>
       <Layout>
-        <SEO {...seoMetaTags} />
+        <SEO {...seoProps} />
         <main className={styles.main}>
           <Blocks blocks={content} />
         </main>

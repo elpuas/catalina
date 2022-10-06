@@ -1,5 +1,11 @@
 module.exports = {
-  content: [],
+  content: [
+    './src/components/blocks/**/*.{html,js}',
+    './src/components/bricks/**/*.{html,js}',
+    './src/components/structures/**/*.{html,js}',
+    './src/components/templates/**/*.{html,js}',
+    './src/pages/**/*.{html,js}',
+  ],
   theme: {
     colors: {
       primary: '#5E6F00',
@@ -13,7 +19,7 @@ module.exports = {
     },
     fontSize: {
       hero: '6rem',
-      heroMobile: '4.625rem',
+      heroMobile: '3.625rem',
       sectionHeader: '2.625rem',
       sectionHeaderMobile: '2.25rem',
       sectionContent: '1.5rem',

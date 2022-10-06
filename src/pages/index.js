@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { graphql } from "gatsby";
-import * as React from "react";
-import { PropTypes } from "prop-types";
-import Layout from "../components/bricks/Layout/Layout";
-import SEO from "../components/bricks/Seo/Seo";
-import * as styles from "../components/templates/Page/Page.module.css";
-import Blocks from "../components/blocks/Blocks/Blocks";
+import { graphql } from 'gatsby';
+import * as React from 'react';
+import { PropTypes } from 'prop-types';
+import Layout from '../components/bricks/Layout/Layout';
+import SEO from '../components/bricks/Seo/Seo';
+import * as styles from '../components/templates/Page/Page.module.css';
+import Blocks from '../components/blocks/Blocks/Blocks';
 
 export default function IndexPage({ data }) {
   const { content, seo } = data.datoCmsFrontPage;
@@ -44,7 +44,7 @@ export const SeoQuery = graphql`
           videoUrl
           thumbnail {
             gatsbyImageData
-            url
+            alt
           }
         }
         ... on DatoCmsBlockSelectedArticlesHero {
@@ -62,7 +62,7 @@ export const SeoQuery = graphql`
             }
             featuredImage {
               gatsbyImageData
-              url
+              alt
             }
           }
         }

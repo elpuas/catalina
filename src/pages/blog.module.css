@@ -1,5 +1,5 @@
 .gridContainer {
-  @apply grid grid-cols-12 gap-8 max-w-screen-lg mx-auto;
+  @apply grid grid-cols-12 gap-8 mx-auto;
 }
 
 .gridItem {
@@ -8,4 +8,8 @@
 
 .pageTitle {
   @apply text-sectionHeader;
+}
+
+.item img {
+  @apply rounded;
 }

@@ -13,3 +13,7 @@
 .blockTextImage h2 strong {
   @apply text-secondary;
 }
+
+.blockTextImage img {
+  @apply rounded;
+}

@@ -21,7 +21,12 @@ import Image from '../Image/Image';
  */
 export default function Card(props) {
   const {
-    title, articleAuthor, slug, image, categories,
+    title,
+    articleAuthor,
+    slug,
+    image,
+    categories,
+    alt,
   } = props;
 
   return (
@@ -34,7 +39,7 @@ export default function Card(props) {
           <Author author={articleAuthor} />
         </div>
         <div className={styles.cardImage}>
-          <Image image={image} alt={`card-${slug}`} />
+          <Image image={image} alt={alt} />
         </div>
       </Link>
       <Category categories={categories} />
@@ -47,6 +52,7 @@ Card.defaultProps = {
   articleAuthor: 'ElPuas',
   slug: '/',
   image: {},
+  alt: { alt: 'Card Image' },
   categories: [{ slug: '/', title: 'code' }],
 };
 
@@ -56,5 +62,6 @@ Card.propTypes = {
   slug: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
+  alt: PropTypes.string,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
 };

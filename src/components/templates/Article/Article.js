@@ -26,26 +26,27 @@ export default function Article({ data }) {
   const {
     categories,
     content,
-    description,
     featuredImage,
-    meta,
+    articleDisplayDate,
     seoMetaTags,
     slug,
     title,
   } = data.datoCmsArticle;
 
-  const seo = {
-    seoMetaTags,
-    description,
-  };
+  console.log('Content From Article', content);
 
-  const date = new Date(meta.publishedAt);
+  const date = new Date(articleDisplayDate);
   const createdOn = date.toLocaleDateString('en-US');
+
+  const seoProps = {
+    seoMetaTags,
+    pageDescription: { description: seoMetaTags.tags[0].content },
+  };
 
   return (
     <div className={styles.article}>
       <Layout>
-        <SEO {...seo} />
+        <SEO {...seoProps} />
         <HeroContainer>
           <GatsbyImage
             image={featuredImage?.gatsbyImageData}
@@ -93,20 +94,10 @@ export const articleQuery = graphql`
         title
         slug
       }
-      meta {
-        publishedAt(fromNow: false)
-      }
+      articleDisplayDate(fromNow: false)
       featuredImage {
         gatsbyImageData
         alt
-      }
-      description {
-        title
-        description
-        twitterCard
-        image {
-          url
-        }
       }
       seoMetaTags {
         tags
@@ -150,6 +141,7 @@ export const articleQuery = graphql`
           }
           image {
             gatsbyImageData
+            alt
           }
         }
       }
