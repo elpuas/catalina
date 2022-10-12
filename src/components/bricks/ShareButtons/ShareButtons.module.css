@@ -1,0 +1,25 @@
+.wrapper {
+  @apply flex items-start flex-col;
+}
+
+.wrapper p {
+  @apply text-[14px] mb-2 pb-1 border-b text-left w-[112px];
+}
+
+.container {
+  @apply inline-flex;
+}
+
+.container li {
+  @apply mr-2;
+}
+
+.container li:last-child {
+  @apply mr-0;
+}
+
+.container li button svg rect,
+.container li button svg circle {
+  @apply fill-primary;
+}
+

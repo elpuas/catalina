@@ -13,6 +13,7 @@ import Heading from '../../bricks/Heading/Heading';
 import HeroContainer from '../../bricks/HeroContainer/HeroContainer';
 import Layout from '../../bricks/Layout/Layout';
 import SEO from '../../bricks/Seo/Seo';
+import ShareButtons from '../../bricks/ShareButtons/ShareButtons';
 
 /**
  * The Article component.
@@ -67,6 +68,7 @@ export default function Article({ data }) {
         </HeroContainer>
         <main className={cx(styles.siteContent, `article-${slug}`, 'article-wrapper')}>
           <Blocks blocks={content} />
+          <ShareButtons />
         </main>
       </Layout>
     </div>
