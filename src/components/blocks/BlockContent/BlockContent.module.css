@@ -3,9 +3,9 @@
 }
 
 .blockContent p {
-  @apply mb-8 text-[1.5rem] leading-relaxed;
+  @apply mb-8 text-[20px] leading-relaxed;
 }
 
 .blockContent p a {
-  @apply break-words decoration-dashed underline decoration-secondary;
+  @apply break-words decoration-wavy underline decoration-secondary hover:decoration-primary hover:text-secondary;
 }

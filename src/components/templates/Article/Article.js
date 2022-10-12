@@ -65,7 +65,7 @@ export default function Article({ data }) {
             </div>
           </div>
         </HeroContainer>
-        <main className={cx(styles.siteContent, `article-${slug}`)}>
+        <main className={cx(styles.siteContent, `article-${slug}`, 'article-wrapper')}>
           <Blocks blocks={content} />
         </main>
       </Layout>
@@ -101,6 +101,17 @@ export const articleQuery = graphql`
         tags
       }
       content {
+        ... on DatoCmsBlockGallery {
+          model {
+            apiKey
+          }
+          galleryStyle
+          images {
+            alt
+            title
+            gatsbyImageData
+          }
+        }
         ... on DatoCmsBlockParagraph {
           model {
             apiKey

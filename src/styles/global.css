@@ -7,6 +7,10 @@ body {
   @apply bg-tertiary overflow-x-hidden text-primary text-base;
 }
 
+code {
+  @apply bg-primary text-secondary p-1 text-[16px] rounded;
+}
+
 .alignfull {
   margin: 0 calc(50% - 50vw);
   max-width: 100vw;
@@ -52,4 +56,8 @@ main {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.article-wrapper .gatsby-image-wrapper {
+  @apply mb-8;
 }
