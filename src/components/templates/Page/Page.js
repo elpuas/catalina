@@ -2,6 +2,7 @@
 import { graphql } from 'gatsby';
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
 import * as styles from './Page.module.css';
 import Blocks from '../../blocks/Blocks/Blocks';
 import Layout from '../../bricks/Layout/Layout';
@@ -16,18 +17,20 @@ import SEO from '../../bricks/Seo/Seo';
  * @return {Element} - React component.
  */
 export default function Page({ data }) {
-  const { content, seoMetaTags } = data.datoCmsPage;
+  const { content, seoMetaTags, slug } = data.datoCmsPage;
 
   const seoProps = {
     seoMetaTags,
     pageDescription: { description: seoMetaTags.tags[0].content },
   };
 
+  const pageClass = slug.replaceAll('-', '').toLowerCase();
+
   return (
     <>
       <Layout>
         <SEO {...seoProps} />
-        <main className={styles.main}>
+        <main className={cx(styles.main, styles[pageClass])}>
           <Blocks blocks={content} />
         </main>
       </Layout>
@@ -48,6 +51,7 @@ export const pageQuery = graphql`
           model {
             apiKey
           }
+          galleryStyle
           images {
             alt
             title

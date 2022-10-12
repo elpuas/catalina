@@ -6,10 +6,12 @@ import Image from '../../bricks/Image/Image';
 import Observables from '../../bricks/Observables/Observables';
 
 export default function BlockGallery(props) {
-  const { images } = props;
+  const { images, galleryStyle } = props;
+  const galleryClass = galleryStyle.replace('_g', 'G') || 'default';
+
   return (
     <>
-      <div className={styles.gallery}>
+      <div className={cx(styles.gallery, styles[galleryClass])}>
         {images.map((image) => (
           // eslint-disable-next-line react/jsx-props-no-spreading
           <Observables
@@ -28,13 +30,16 @@ export default function BlockGallery(props) {
 
 BlockGallery.defaultProps = {
   images: [],
+  galleryStyle: 'default',
 };
 
 BlockGallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       alt: PropTypes.string,
+      // eslint-disable-next-line react/forbid-prop-types
       gatsbyImageData: PropTypes.object,
     }),
   ),
+  galleryStyle: PropTypes.string,
 };

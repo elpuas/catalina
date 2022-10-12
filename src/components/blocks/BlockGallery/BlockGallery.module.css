@@ -6,9 +6,22 @@
   @apply col-span-12 sm:col-span-6;
 }
 
-.gallery > div:first-child {
+.dannyGallery > div:first-child {
   @apply row-span-2;
 }
+
+.miaGallery > div {
+  @apply sm:max-h-[380px];
+}
+
+.miaGallery > div:last-child {
+  @apply col-span-12
+}
+
+.pippoGallery > div:nth-child(2) {
+  @apply row-span-2;
+}
+
 
 .item {
   @apply relative;
