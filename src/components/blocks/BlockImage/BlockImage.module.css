@@ -2,6 +2,10 @@
   @apply relative;
 }
 
+.blockImage img {
+  @apply rounded;
+}
+
 .alignfull {
   margin: 64px calc(50% - 50vw);
   max-width: 100vw;

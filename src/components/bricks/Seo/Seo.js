@@ -20,7 +20,7 @@ export default function SEO(props) {
   const title = tags.filter((tag) => tag.tagName === 'title');
 
   return (
-    <Helmet title={title[0]?.content}>
+    <Helmet title={title[0]?.content} htmlAttributes={{ lang: 'en' }}>
       <meta name="description" content={description} />
       {tags.map((tag, index) => {
         if (tag.tagName === 'meta') {

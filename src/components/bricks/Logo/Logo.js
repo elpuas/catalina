@@ -6,7 +6,7 @@ import * as styles from './Logo.module.css';
 export default function Logo() {
   return (
     <div className={styles.logo}>
-      <Link to="/">
+      <Link to="/" aria-label="go to home">
         <SkullICO />
       </Link>
     </div>

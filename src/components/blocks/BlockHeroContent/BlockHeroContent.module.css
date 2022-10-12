@@ -11,7 +11,7 @@
 }
 
 .hero .heading {
-  @apply text-hero text-primary leading-tight my-8;
+  @apply text-heroMobile sm:text-hero text-primary leading-tight my-8;
 }
 
 .hero .heading p strong {

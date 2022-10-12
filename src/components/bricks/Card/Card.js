@@ -31,7 +31,7 @@ export default function Card(props) {
 
   return (
     <div className={styles.card}>
-      <Link to={`/blog/${slug}`}>
+      <Link to={`/blog/${slug}`} aria-label={`Go to ${title}`}>
         <div className={styles.cardContent}>
           <Heading className={styles.heading} level="3">
             {title}

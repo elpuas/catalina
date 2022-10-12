@@ -15,7 +15,7 @@ import Callout from '../Callout/Callout';
  */
 export default function BlockSelectedArticlesHero(props) {
   const { callout, articles } = props;
-  console.log('articles from BlockSelectedArticlesHero', articles);
+
   return (
     <div className={styles.articles}>
       <div className={styles.articlesContent}>

@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { graphql } from "gatsby";
-import * as React from "react";
-import PropTypes from "prop-types";
-import * as styles from "./Page.module.css";
-import Blocks from "../../blocks/Blocks/Blocks";
-import Layout from "../../bricks/Layout/Layout";
-import SEO from "../../bricks/Seo/Seo";
+import { graphql } from 'gatsby';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import * as styles from './Page.module.css';
+import Blocks from '../../blocks/Blocks/Blocks';
+import Layout from '../../bricks/Layout/Layout';
+import SEO from '../../bricks/Seo/Seo';
 
 /**
  * The Page component.
@@ -44,6 +44,16 @@ export const pageQuery = graphql`
         tags
       }
       content {
+        ... on DatoCmsBlockGallery {
+          model {
+            apiKey
+          }
+          images {
+            alt
+            title
+            gatsbyImageData
+          }
+        }
         ... on DatoCmsBlockTextAndImage {
           model {
             apiKey
@@ -55,6 +65,25 @@ export const pageQuery = graphql`
             gatsbyImageData
             url
             alt
+          }
+        }
+        ... on DatoCmsBlockSelectedArticlesHero {
+          model {
+            apiKey
+          }
+          ...CalloutArticle
+          articles {
+            articleAuthor
+            slug
+            title
+            categories {
+              title
+              slug
+            }
+            featuredImage {
+              gatsbyImageData
+              alt
+            }
           }
         }
         ... on DatoCmsBlockParagraph {
@@ -92,6 +121,16 @@ export const pageQuery = graphql`
           thumbnail {
             gatsbyImageData
             url
+          }
+        }
+        ... on DatoCmsBlockImage {
+          alignment
+          model {
+            apiKey
+          }
+          image {
+            gatsbyImageData
+            alt
           }
         }
       }

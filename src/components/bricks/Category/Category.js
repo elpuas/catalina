@@ -19,7 +19,7 @@ export default function Category({ categories }) {
       {Array.isArray(categories)
         && categories.map((cat, index) => (
           <li key={index}>
-            <Link to={`/category/${cat.slug}`}>{cat.title}</Link>
+            <Link to={`/category/${cat.slug}`} aria-label={`Go to ${cat.title} Category`}>{cat.title}</Link>
           </li>
         ))}
     </ul>

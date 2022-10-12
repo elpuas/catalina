@@ -75,13 +75,14 @@ export default function Navigation() {
             <li key={link?.id} className={styles.link}>
               <Link
                 to={link.model.apiKey === 'front_page' ? '/' : `/${link.slug}`}
+                aria-label={`Go to ${link.title}`}
               >
                 {`${link.title}.`}
               </Link>
             </li>
           ))}
           <li className={styles.link}>
-            <Link to="/blog">
+            <Link to="/blog" aria-label="Go to Blog">
               Blog.
             </Link>
           </li>

@@ -33,8 +33,6 @@ export default function Article({ data }) {
     title,
   } = data.datoCmsArticle;
 
-  console.log('Content From Article', content);
-
   const date = new Date(articleDisplayDate);
   const createdOn = date.toLocaleDateString('en-US');
 
