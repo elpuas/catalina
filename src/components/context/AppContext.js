@@ -4,8 +4,13 @@ import * as React from 'react';
 import { createContext, useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 
+// Create a default context (TypeError: Cannot destructure property).
+const defaultContext = {
+  isMenuOpen: false,
+};
+
 // Initialize context object.
-export const AppContext = createContext();
+export const AppContext = createContext(defaultContext);
 
 /**
  * Export useContext Hook.
