@@ -3,7 +3,7 @@
 }
 
 .blockImage img {
-  @apply rounded;
+  @apply rounded object-top;
 }
 
 .alignfull {
@@ -43,11 +43,11 @@
 }
 
 .alignright {
-  @apply float-none md:float-right w-full md:w-1/2 h-3/6 p-4 overflow-hidden;
+  @apply float-none md:float-right w-full md:w-1/2 h-3/6 p-4 overflow-hidden text-center;
 }
 
 .alignleft {
-  @apply float-none md:float-left w-full md:w-1/2 h-3/6 p-4 overflow-hidden;
+  @apply float-none md:float-left w-full md:w-1/2 h-3/6 p-4 overflow-hidden text-center;
 }
 
 .aligncenter {

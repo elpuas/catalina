@@ -15,5 +15,5 @@
 }
 
 .blockTextImage img {
-  @apply rounded;
+  @apply rounded object-top;
 }

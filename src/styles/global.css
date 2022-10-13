@@ -8,7 +8,7 @@ body {
 }
 
 code {
-  @apply bg-primary text-secondary p-1 text-[16px] rounded;
+  @apply bg-primary text-secondary p-1 text-[16px] rounded break-words;
 }
 
 .alignfull {

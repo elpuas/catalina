@@ -14,12 +14,12 @@
   @apply text-tertiary;
 }
 
-.articleContent h2 {
-  @apply text-sectionHeader text-primary font-interBold mb-14;
+.article h2 {
+  @apply text-sectionHeader text-primary font-interBold mb-8;
 }
 
-.articleContent p {
-  @apply mb-14;
+.article p {
+  @apply mb-8;
 }
 
 .heroInner {
