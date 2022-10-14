@@ -34,8 +34,19 @@
   @apply text-base font-interBold lowercase;
 }
 
+.link a[aria-current="page"]::after {
+  @apply border-b-[3px] w-full block;
+
+  content: '';
+}
+
 .mobile .link {
-  @apply text-sectionContent text-tertiary transition duration-500 ease-in-out hover:text-secondary;
+  @apply text-[56px] text-tertiary transition duration-500 ease-in-out hover:text-secondary;
+}
+
+.link a[aria-current="page"]::after {
+  @apply border-b-4;
+
 }
 
 .navigation > [role="button"] > div > div {

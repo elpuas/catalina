@@ -1,5 +1,11 @@
 .card {
-  @apply bg-primary mb-8 hover:bg-secondary transform transition-transform hover:scale-105 relative h-[316px];
+  @apply bg-primary mb-8 transform transition-transform relative h-[316px];
+  @apply hover:scale-105 hover:bg-secondary;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 0 0 0, rgba(0, 0, 0, 0.3) 0 0 0 0;
+}
+
+.card:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px, rgba(0, 0, 0, 0.3) 0 18px 36px -18px;
 }
 
 .card a {

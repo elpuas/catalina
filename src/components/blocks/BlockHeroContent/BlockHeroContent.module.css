@@ -1,5 +1,5 @@
 .hero {
-  @apply my-28;
+  @apply mt-14 md:mt-28 mb-28;
 }
 
 .alignCenter {
@@ -11,7 +11,7 @@
 }
 
 .hero .heading {
-  @apply text-heroMobile sm:text-hero text-primary leading-tight my-8;
+  @apply text-heroMobile sm:text-hero text-primary leading-tight mt-4 md:mt-8 mb-8;
 }
 
 .hero .heading p strong {
@@ -19,5 +19,5 @@
 }
 
 .hero .eyebrow {
-  @apply text-sectionContent uppercase text-primary tracking-[3px];
+  @apply text-sectionContent leading-loose md:leading-none uppercase text-primary tracking-[3px];
 }
