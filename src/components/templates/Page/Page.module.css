@@ -1,4 +1,4 @@
 .main {
-  @apply mt-20;
+  @apply mt-0 md:mt-20;
 }
 

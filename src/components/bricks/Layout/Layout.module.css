@@ -1,3 +1,8 @@
 .container {
   @apply max-w-screen-xl mx-auto;
 }
+
+.container > div,
+.container > h1 {
+  @apply px-5 xl:px-0;
+}

@@ -1,9 +1,9 @@
 .videoWrapper {
-  @apply relative min-h-[500px] sm:min-h-full sm:max-h-96 w-full pb-0 sm:pb-[42.25%];
+  @apply relative h-[500px] sm:h-[336px] sm:max-h-96 w-full pb-0 sm:pb-[42.25%];
 }
 
 .videoWrapper iframe {
-  @apply absolute top-0 left-0 w-full h-full bg-tertiary h-[500px];
+  @apply absolute top-0 left-0 w-full bg-tertiary h-[500px] sm:h-[336px];
 }
 
 .thumbnail {

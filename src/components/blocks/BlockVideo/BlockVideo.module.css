@@ -7,7 +7,7 @@
 }
 
 .blockVideo > div:last-child {
-  @apply flex h-full;
+  @apply flex h-full items-center;
 }
 
 .blockVideo > div {
