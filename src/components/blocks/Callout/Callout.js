@@ -20,14 +20,20 @@ import Heading from '../../bricks/Heading/Heading';
  * @return {Element} The rendered component.
  */
 export default function Callout(props) {
-  const { heading, content, link } = props;
+  const {
+    heading, content, link,
+  } = props;
+
+  const hasCategories = !!(link.categories && link.categories.length > 0);
+  const isBlog = hasCategories ? '/blog/' : '/';
+
   return (
     <div className={styles.callout}>
       <Heading className={styles.heading} level="2">
         <StructuredText data={heading} />
       </Heading>
       <BlockContent content={content} />
-      <Button slug={`/${link.slug}`} name="Learn More" mode="secondary" />
+      <Button slug={isBlog + link.slug} name="Learn More" mode="secondary" />
     </div>
   );
 }
@@ -37,5 +43,6 @@ Callout.propTypes = {
   content: PropTypes.object,
   link: PropTypes.shape({
     slug: PropTypes.string,
+    categories: PropTypes.array,
   }),
 };

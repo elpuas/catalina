@@ -45,3 +45,7 @@
 .article nav > div[role="button"] > div > div {
   background: #d8ff00 !important;
 }
+
+.button {
+  @apply hover:animate-pulse;
+}

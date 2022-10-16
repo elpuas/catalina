@@ -29,6 +29,10 @@
   @apply w-full h-full object-cover;
 }
 
+.alignfull img {
+  @apply object-center;
+}
+
 .alignright + div:not(.alignright, .alignleft) {
   @apply float-none md:w-1/2 md:float-left;
 }

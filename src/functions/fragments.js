@@ -13,6 +13,9 @@ export const calloutVideo = graphql`
         ... on DatoCmsArticle {
           slug
           title
+          categories {
+            id
+          }
         }
         ... on DatoCmsPage {
           slug
@@ -36,6 +39,9 @@ export const calloutArticles = graphql`
         ... on DatoCmsArticle {
           slug
           title
+          categories {
+            id
+          }
         }
         ... on DatoCmsPage {
           slug
@@ -53,6 +59,9 @@ export const link = graphql`
         id
         slug
         title
+        categories {
+          id
+        }
       }
       ... on DatoCmsPage {
         id
