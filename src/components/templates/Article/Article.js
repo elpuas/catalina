@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
 import * as React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql, navigate } from 'gatsby';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 import * as styles from './Article.module.css';
@@ -68,6 +68,7 @@ export default function Article({ data }) {
         </HeroContainer>
         <main className={cx(styles.siteContent, `article-${slug}`, 'article-wrapper')}>
           <Blocks blocks={content} />
+          <button className={styles.button} type="button" onClick={() => navigate(-1)}>Back</button>
           <ShareButtons />
         </main>
       </Layout>

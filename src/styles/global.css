@@ -11,6 +11,10 @@ code {
   @apply bg-primary text-secondary p-1 text-[16px] rounded break-words;
 }
 
+pre {
+  @apply rounded;
+}
+
 .alignfull {
   margin: 0 calc(50% - 50vw);
   max-width: 100vw;
@@ -21,7 +25,7 @@ h1,
 h2,
 h3,
 h4 {
-  @apply font-interBlack;
+  @apply font-interBlack leading-normal;
 }
 
 h2 {

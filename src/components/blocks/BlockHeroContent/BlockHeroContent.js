@@ -29,7 +29,7 @@ export default function BlockHeroContent(props) {
       threshold={0.5}
     >
       <div className={cx(styles.hero, styles[heroAlign])}>
-        <div className={styles.eyebrow}>{eyebrow}</div>
+        <p className={styles.eyebrow}>{eyebrow}</p>
         <Heading className={styles.heading} level="2">
           <StructuredText data={heading} />
         </Heading>

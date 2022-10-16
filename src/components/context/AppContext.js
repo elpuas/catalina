@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 // Create a default context (TypeError: Cannot destructure property).
 const defaultContext = {
-  isMenuOpen: false,
+  isMenuOpen: true,
 };
 
 // Initialize context object.
