@@ -49,10 +49,12 @@ export default function Categories({ data, pageContext }) {
 export const articleQuery = graphql`
   query CategoryQuery($slug: String!) {
     allDatoCmsArticle(
-      filter: { categories: { elemMatch: { slug: { eq: $slug } } } }
+      filter: { categories: { elemMatch: { slug: { eq: $slug } } } },
+      sort: {fields: articleDisplayDate, order: DESC}
     ) {
       edges {
         node {
+          articleDisplayDate(fromNow: false)
           id
           title
           slug

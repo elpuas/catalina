@@ -3,7 +3,7 @@
 }
 
 .navigation > div[role="button"] {
-  @apply block z-50;
+  @apply block lg:hidden z-50;
 }
 
 .isDesktop > div[role="button"] {
