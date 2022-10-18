@@ -17,5 +17,6 @@ export default function Image(props) {
 Image.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
-  alt: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  alt: PropTypes.object,
 };

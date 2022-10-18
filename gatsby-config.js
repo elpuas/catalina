@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 const path = require('path');
+
 const siteUrl = process.env.URL || 'https://www.elpuas.com';
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('dotenv').config({
