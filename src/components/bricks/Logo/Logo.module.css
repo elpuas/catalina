@@ -1,5 +1,5 @@
 .logo {
-  @apply w-10 hover:animate-pulse transform transition duration-500 hover:scale-110;
+  @apply w-10 hover:animate-pulse transform transition duration-500 hover:scale-110 relative z-[100];
 }
 
 .logo svg {
