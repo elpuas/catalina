@@ -8,10 +8,16 @@ import * as styles from '../components/templates/Page/Page.module.css';
 import Blocks from '../components/blocks/Blocks/Blocks';
 
 export default function IndexPage({ data }) {
-  const { content, seo } = data.datoCmsFrontPage;
+  const { content, seoMetaTags } = data.datoCmsFrontPage;
+
+  const seoProps = {
+    seoMetaTags,
+    pageDescription: { description: seoMetaTags.tags[0].content },
+  };
+
   return (
     <Layout>
-      <SEO {...seo} />
+      <SEO {...seoProps} />
       <main className={styles.main}>
         <Blocks blocks={content} />
       </main>

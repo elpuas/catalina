@@ -88,7 +88,9 @@ Article.propTypes = {
 /** The Article Query */
 export const articleQuery = graphql`
   query ArticleQuery($slug: String!) {
-    datoCmsArticle(slug: { eq: $slug }) {
+    datoCmsArticle(
+      slug: { eq: $slug },
+      ) {
       title
       slug
       categories {
