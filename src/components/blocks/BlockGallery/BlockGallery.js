@@ -12,12 +12,14 @@ export default function BlockGallery(props) {
   return (
     <>
       <div className={cx(styles.gallery, styles[galleryClass])}>
-        {images.map((image) => (
+        {images.map((image, index) => (
           // eslint-disable-next-line react/jsx-props-no-spreading
           <Observables
             isVisibleClass="isVisible"
             customClass={cx('observable-index', styles.item)}
             threshold={0.5}
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
           >
             <Image image={image} alt={image} />
             <span className={styles.title}>{image.title}</span>

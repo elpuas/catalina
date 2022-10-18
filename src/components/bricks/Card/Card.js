@@ -62,6 +62,7 @@ Card.propTypes = {
   slug: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
-  alt: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  alt: PropTypes.object,
   categories: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
 };

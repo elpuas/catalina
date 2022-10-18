@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 const path = require('path');
+
+const siteUrl = process.env.URL || 'https://www.elpuas.com';
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -26,7 +28,33 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        excludes: [],
+        query: `
+        {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            edges {
+              node {
+                path
+              }
+            }
+          }
+      }`,
+        resolveSiteUrl: () => siteUrl,
+        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
+          url: `${site.siteMetadata.siteUrl}${edge.node.path}`,
+          changefreq: 'daily',
+          priority: 0.7,
+        })),
+      },
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
