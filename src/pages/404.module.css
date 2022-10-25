@@ -1,0 +1,14 @@
+.heading {
+  @apply text-center;
+}
+.container h2 {
+  @apply text-center mt-8;
+}
+
+.container h2 a {
+  @apply hover:animate-pulse decoration-wavy underline decoration-secondary hover:decoration-primary hover:text-secondary;
+}
+
+.wrapper {
+  @apply flex flex-col md:flex-row justify-center;
+}

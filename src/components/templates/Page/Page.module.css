@@ -2,3 +2,10 @@
   @apply mt-14 md:mt-20;
 }
 
+h1 {
+  @apply text-heroMobile lg:text-hero;
+}
+
+.button {
+  @apply uppercase font-interBold text-tertiary hover:text-primary rounded-full px-10 py-6 bg-primary hover:bg-secondary transition-colors inline-block mt-8;
+}

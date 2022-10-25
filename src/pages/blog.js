@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Link, graphql, useStaticQuery } from 'gatsby';
-import { PropTypes } from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/bricks/Layout/Layout';
 import SEO from '../components/bricks/Seo/Seo';
