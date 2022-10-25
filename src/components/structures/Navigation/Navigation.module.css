@@ -18,6 +18,10 @@
   @apply ml-7 text-primary transition hover:text-secondary;
 }
 
+.link:nth-child(4) {
+  @apply order-5;
+}
+
 .mobile {
   @apply bg-primary fixed top-0 w-full h-full z-30 -left-full transform -translate-x-full transition-transform ease-out duration-500;
 }

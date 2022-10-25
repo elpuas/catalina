@@ -32,6 +32,9 @@ export default function Page({ data }) {
         <SEO {...seoProps} />
         <main className={cx(styles.main, styles[pageClass])}>
           <Blocks blocks={content} />
+          {slug === 'lets-talk' && (
+            <a className={styles.button} href="mailto:management@elpuasdev.com?subject=Let&apos;s talk&body=Let me know if that’s something that you’d be interested in.">Get in Touch</a>
+          )}
         </main>
       </Layout>
     </>
