@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import * as styles from './Video.module.css';
+
 /**
  * Render the video block component
  *
@@ -31,16 +32,18 @@ export default function Video(props) {
         >
           {children}
         </button>
-        <iframe
-          src={hideThumbnail ? `${videoUrl}?autoplay=1` : undefined}
-          title={videoTitle}
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          frameBorder="0"
-          webkitallowfullscreen="true"
-          mozallowfullscreen="true"
-          allowFullScreen
-          style={{ display: hideThumbnail ? 'block' : 'none' }}
-        />
+        { videoUrl && (
+          <iframe
+            src={hideThumbnail ? `${videoUrl}?autoplay=1` : undefined}
+            title={videoTitle}
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            allowFullScreen
+            style={{ display: hideThumbnail ? 'block' : 'none' }}
+          />
+        )}
       </div>
     </div>
   );

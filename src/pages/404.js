@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import gifImage from '../images/404-pic.gif';
 import Layout from '../components/bricks/Layout/Layout';
@@ -13,6 +14,15 @@ export default function NotFoundPage() {
     'https://open.spotify.com/embed/playlist/60TdnsygGvCVJvuiofOQjV',
   ];
 
+  const [playlist, setPlaylist] = useState(playlists[0]);
+
+  useEffect(() => {
+    setInterval(() => {
+      const random = Math.floor(Math.random() * playlists.length);
+      setPlaylist(playlists[random]);
+    }, 10000);
+  }, []);
+
   return (
     <Layout>
       <SEO />
@@ -23,7 +33,7 @@ export default function NotFoundPage() {
         <div className={styles.wrapper}>
           <img src={gifImage} alt="404" />
           <iframe
-            src={playlists[Math.floor(Math.random() * playlists.length)]}
+            src={playlist}
             width="300"
             height="380"
             frameBorder="0"
