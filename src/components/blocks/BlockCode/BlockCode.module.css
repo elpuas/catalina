@@ -1,3 +1,24 @@
 .blockCode {
-  @apply mb-14;
+  @apply mb-14 relative pt-3 bg-[#F2F2F2] rounded-t;
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px, rgba(0, 0, 0, 0.3) 0 18px 36px -18px;
 }
+
+.blockCode pre {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important
+}
+
+.blockCode > div {
+  @apply w-4 h-4 rounded-full bg-[#FFBD2F] relative left-10 inline-block;
+}
+
+.blockCode > div::after {
+  @apply w-4 h-4 rounded-full bg-[#27C93F] left-6 absolute;
+  content: '';
+}
+
+.blockCode > div::before {
+  @apply w-4 h-4 rounded-full bg-[#FF5F56] -left-6 absolute;
+  content: '';
+}
+
