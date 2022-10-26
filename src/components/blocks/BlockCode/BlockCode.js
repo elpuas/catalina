@@ -1,4 +1,4 @@
-import { duotoneSea } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import * as React from 'react';
 import PropTypes from 'prop-types';
@@ -24,7 +24,8 @@ export default function BlockCode(props) {
 
   return (
     <div className={styles.blockCode}>
-      <SyntaxHighlighter language={language} style={duotoneSea}>
+      <div />
+      <SyntaxHighlighter language={language} style={dracula}>
         {code}
       </SyntaxHighlighter>
     </div>
