@@ -50,7 +50,7 @@ export const articleQuery = graphql`
   query CategoryQuery($slug: String!) {
     allDatoCmsArticle(
       filter: { categories: { elemMatch: { slug: { eq: $slug } } } },
-      sort: {fields: articleDisplayDate, order: DESC}
+      sort: {articleDisplayDate: DESC}
     ) {
       edges {
         node {
