@@ -28,33 +28,7 @@ module.exports = {
     'gatsby-plugin-postcss',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-      options: {
-        excludes: [],
-        query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            edges {
-              node {
-                path
-              }
-            }
-          }
-      }`,
-        resolveSiteUrl: () => siteUrl,
-        serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: `${site.siteMetadata.siteUrl}${edge.node.path}`,
-          changefreq: 'daily',
-          priority: 0.7,
-        })),
-      },
-    },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
