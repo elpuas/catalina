@@ -25,7 +25,7 @@ export default function Button(props) {
         mode === 'secondary' && styles.secondary,
       )}
     >
-      <Link to={slug}>{name}</Link>
+      <Link to={slug} aria-label={`Go to ${name}`}>{name}</Link>
       {mode === 'secondary' && <ArrowRightICO />}
     </div>
   );
