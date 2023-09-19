@@ -19,6 +19,9 @@ export default function SEO(props) {
 
   const title = tags.filter((tag) => tag.tagName === 'title');
 
+  // eslint-disable-next-line no-console
+  console.log(props);
+
   return (
     <Helmet title={title[0]?.content} htmlAttributes={{ lang: 'en' }}>
       <meta name="description" content={description} />
